@@ -1,0 +1,136 @@
+/* Identidade visual da VERSAO YOUTUBE: creme, floresta, cenoura, tomate, sol e kiwi */
+@font-face { font-family: "Barlow Condensed"; src: url(fonts/barlow-condensed-600.woff2) format("woff2"); font-weight: 600; }
+@font-face { font-family: "Barlow Condensed"; src: url(fonts/barlow-condensed-800.woff2) format("woff2"); font-weight: 800; }
+@font-face { font-family: "Short Stack"; src: url(fonts/short-stack.woff2) format("woff2"); }
+
+:root {
+  --sol: #FFC926; --creme: #F3E8CC; --cenoura: #F96015; --tomate: #D52518; --floresta: #18542A; --kiwi: #9ABC05;
+  --titulo: "Barlow Condensed", sans-serif;
+  --texto: "Short Stack", cursive;
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--creme); }
+body {
+  font: 400 8.5pt/1.58 var(--texto); color: var(--floresta);
+  -webkit-print-color-adjust: exact; print-color-adjust: exact;
+}
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+svg, img { display: block; width: 100%; height: auto; }
+
+/* ─────────── folha */
+.folha { width: 210mm; height: 297mm; position: relative; overflow: hidden; background: var(--creme); break-after: page; }
+.folha:last-child { break-after: auto; }
+.tracos { position: absolute; inset: 0; width: 100%; height: 100%; }
+.conteudo { position: absolute; left: 22mm; right: 22mm; top: 22mm; height: 245mm; overflow: visible; }
+.rodape {
+  position: absolute; left: 22mm; right: 22mm; bottom: 11mm; display: flex; justify-content: flex-end; gap: 6mm;
+  font: 600 9pt var(--titulo); letter-spacing: .14em; color: var(--floresta);
+}
+
+/* ─────────── tipografia */
+.kicker { font: 600 10.5pt var(--titulo); letter-spacing: .22em; text-transform: uppercase; color: var(--cenoura); margin-bottom: 1mm; }
+h1 {
+  font: 800 44pt/.92 var(--titulo); text-transform: uppercase; color: var(--tomate);
+  letter-spacing: -.005em; margin-bottom: 4.5mm; max-width: 160mm;
+}
+h1.com-arte { max-width: 118mm; }
+h1.receita-titulo { font-size: 31pt; line-height: .95; }
+h2 {
+  position: relative; display: inline-block; margin: 4.5mm 0 3mm; padding-right: 3mm;
+  font: 800 17pt/1 var(--titulo); text-transform: uppercase; letter-spacing: .02em; color: var(--floresta);
+}
+h2 .sub { position: absolute; left: -1mm; bottom: -1.2mm; width: calc(100% + 1mm); height: 3mm; }
+h2 span { position: relative; }
+h3 { font: 800 11pt var(--titulo); letter-spacing: .06em; text-transform: uppercase; color: var(--tomate); margin: 2.5mm 0 1.5mm; }
+p { margin-bottom: 2.6mm; max-width: 160mm; }
+b { font-weight: 400; color: var(--tomate); }
+.lead { font-size: 10.5pt; line-height: 1.5; }
+.meta { font: 600 10pt var(--titulo); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1mm; }
+.subtitulo { color: var(--cenoura); font-size: 10pt; margin-bottom: 0; }
+.destaque {
+  font: 800 19pt/1.05 var(--titulo); text-transform: uppercase; color: var(--cenoura);
+  margin: 4mm 0; padding-left: 5mm; border-left: 2.2mm solid var(--sol);
+}
+.assinatura { font: 600 11pt var(--titulo); letter-spacing: .2em; text-transform: uppercase; color: var(--cenoura); margin-top: 6mm; }
+.medidas { margin-top: 4mm; font-size: 8pt; }
+.rot-inline { font: 800 10.5pt var(--titulo); letter-spacing: .06em; text-transform: uppercase; color: var(--tomate); }
+
+/* ─────────── listas */
+.bola {
+  flex: none; width: 6.6mm; height: 6.6mm; border-radius: 50%; background: var(--cenoura); color: var(--creme);
+  display: flex; align-items: center; justify-content: center; font: 800 9.5pt var(--titulo);
+}
+ol.pontos { list-style: none; padding: 0; margin: 0 0 1.5mm; }
+ol.pontos li { display: flex; gap: 3.6mm; align-items: flex-start; margin-bottom: 2.2mm; }
+ol.pontos li .bola { margin-top: -.6mm; }
+ul.bolinhas { list-style: none; padding: 0; margin: 0 0 1.5mm; }
+ul.bolinhas li { display: flex; gap: 3mm; align-items: flex-start; margin-bottom: 1.6mm; }
+.bk { flex: none; width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--kiwi); margin-top: 1.4mm; }
+ol.rotulados { list-style: none; padding: 0; margin: 0 0 2mm; }
+ol.rotulados li { display: grid; grid-template-columns: 10.5mm 34mm 1fr; align-items: start; margin-bottom: 3.2mm; }
+ol.rotulados .bola { margin-top: -.8mm; }
+ol.rotulados .rot { font: 800 11.5pt/1.2 var(--titulo); letter-spacing: .04em; text-transform: uppercase; color: var(--tomate); }
+.duas-colunas { columns: 2; column-gap: 8mm; }
+.duas-colunas h3 { break-after: avoid; margin-top: 0; }
+.duas-colunas li { break-inside: avoid; }
+ul.ingr li { margin-bottom: 1.2mm; }
+
+/* índices (sumário e aberturas) */
+.indice li, .sumario li { align-items: center; }
+.pontilhado { flex: 1; border-bottom: 1.4px dotted var(--floresta); align-self: flex-end; transform: translateY(-1.4mm); min-width: 6mm; }
+.num { flex: none; font: 800 12pt var(--titulo); color: var(--tomate); }
+.sumario li { margin-bottom: 2.2mm; }
+.sumario li .txt { max-width: 125mm; }
+.sumario li.sub { padding-left: 10.2mm; margin-bottom: 1mm; font-size: 7.6pt; }
+.sumario li.sub .num { font-size: 10pt; color: var(--cenoura); }
+.indice .txt { max-width: 125mm; }
+.nome-receita { display: block; }
+.rotulo-receita { display: block; font: 600 9pt var(--titulo); letter-spacing: .16em; text-transform: uppercase; color: var(--cenoura); }
+
+/* tabela */
+table { width: 100%; border-collapse: collapse; margin: 1mm 0 3mm; font-size: 8.2pt; }
+th { text-align: left; font: 800 10pt var(--titulo); letter-spacing: .12em; text-transform: uppercase; color: var(--creme); background: var(--floresta); padding: 1.6mm 2.5mm; }
+td { border-bottom: 1px dashed rgba(24, 84, 42, .4); padding: 1.9mm 2.5mm; vertical-align: top; }
+td:first-child { width: 44mm; font: 800 10.5pt/1.25 var(--titulo); letter-spacing: .03em; color: var(--tomate); }
+
+/* segredo de chef */
+.segredo { background: var(--sol); border-radius: 3mm; padding: 3mm 5mm 1mm; margin-top: 2mm; }
+.segredo .seg-tit { font: 800 14pt/1 var(--titulo); text-transform: uppercase; letter-spacing: .06em; color: var(--tomate); margin-bottom: 1.4mm; }
+.segredo p { font-size: 8.3pt; }
+
+/* bônus */
+ol.pulos { list-style: none; padding: 0; margin: 2mm 0 0; }
+ol.pulos li { display: flex; gap: 4mm; margin-bottom: 5mm; }
+ol.pulos .bola { width: 9mm; height: 9mm; font-size: 13pt; }
+.pulo-tit { font: 800 15pt/1.1 var(--titulo); text-transform: uppercase; color: var(--tomate); margin-bottom: 1mm; }
+ol.pulos p { font-size: 9.2pt; }
+
+/* ilustrações */
+.ilu { position: absolute; }
+.ilu.canto { right: -4mm; top: -4mm; width: 58mm; }
+.ilu.canto.pequeno { width: 46mm; top: -2mm; }
+.ilu.canto.baixo { top: auto; bottom: 0; right: 0; width: 60mm; }
+.abertura-ilu { position: relative !important; width: 112mm; margin: 4mm 0 6mm 12mm; }
+.capa-ilu { position: relative !important; }
+
+/* capa */
+.capa .conteudo { top: 26mm; }
+.capa-titulo { font-size: 92pt; line-height: .82; margin: 3mm 0 5mm; }
+.capa-titulo span { display: block; }
+.capa-titulo .l2 { color: var(--cenoura); }
+.capa-grade { display: grid; grid-template-columns: 1fr 92mm; gap: 4mm; align-items: center; }
+.capa-promessa { font-size: 11.5pt; line-height: 1.45; margin-top: 9mm; }
+.capa-promessa .grande { font: 800 22pt var(--titulo); color: var(--tomate); letter-spacing: .02em; text-transform: uppercase; }
+.capa-sub { font-size: 9.2pt; max-width: 125mm; }
+.capa-autor { position: absolute; bottom: 0; left: 0; font: 600 11pt var(--titulo); letter-spacing: .24em; color: var(--cenoura); }
+
+/* encerramento */
+.fim .conteudo { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+.fim-ilu { position: relative !important; width: 100mm; margin-bottom: 6mm; }
+.capa-titulo.pequeno { font-size: 54pt; max-width: none; }
+.capa-titulo.pequeno span { display: inline; }
+.fim p { max-width: 140mm; }
+.capa-autor.fim { position: static; margin-top: 6mm; }
