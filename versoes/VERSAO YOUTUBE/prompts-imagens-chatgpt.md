@@ -6,7 +6,7 @@ Ilustrações do ebook **Cozinha Mamede (Versão YouTube)** no estilo da ficha d
 
 1. Abra uma conversa nova no ChatGPT e **anexe a imagem de referência** (a ficha do ramen).
 2. Cole o **Prompt mestre** abaixo. Ele define o estilo para todas as imagens.
-3. Depois peça uma imagem por vez, colando só a linha da imagem (ex.: "Imagem 04").
+3. Depois peça uma imagem por vez, colando só a linha da imagem (ex.: "Elemento A1" ou "Imagem 04").
 4. Se alguma sair fora do estilo, responda: *"Refaça mantendo exatamente o estilo do prompt mestre e da referência."*
 
 ---
@@ -16,6 +16,15 @@ Ilustrações do ebook **Cozinha Mamede (Versão YouTube)** no estilo da ficha d
 ```
 Você vai criar uma série de ilustrações para um ebook de receitas chamado "Cozinha Mamede".
 Todas devem seguir EXATAMENTE o estilo da imagem de referência anexada (a tigela de ramen).
+
+CONTEXTO: o ebook gira em torno de 5 ingredientes brasileiros, baratos e 100% aproveitáveis,
+que vão aparecer como elementos ilustrados em várias páginas:
+1. Abóbora cabotiá (japonesa): versátil, barata, comida afetiva, aproveitada da casca à semente
+2. Banana-da-terra (ou banana-prata firme): vai do salgado ao doce
+3. Sobrecoxa de frango com osso e pele: mais saborosa, suculenta e barata que o peito
+4. Mandioca (aipim/macaxeira): a raiz do Brasil, rica em amido e coringa na cozinha
+5. Cenoura: ingrediente de toda geladeira, aqui tratado com técnica de chef
+Desenhe esses ingredientes de forma reconhecível, com carinho e cara de comida de verdade.
 
 ESTILO:
 - Ilustração plana, feita à mão, com cara de xilogravura/serigrafia (risograph), traço levemente irregular
@@ -28,7 +37,7 @@ PALETA (use só estas cores):
 - Verde jade #00A86B (detalhes, vapor, ervas, utensílios)
 - Verde jade claro #66CDAA (caldos, preenchimentos secundários)
 - Verde jade escuro #00553A (linhas finas e detalhes de contraste)
-- Dourado #FFD700 (alimentos dourados: frango, gema, banana, limão, farofa)
+- Dourado #FFD700 (alimentos: polpa da abóbora, banana, pele dourada do frango, cenoura, gema, limão)
 - Off-white #F6F3EA (fundo e linhas vazadas)
 
 REGRAS:
@@ -42,7 +51,61 @@ Responda só "Entendido" e aguarde eu pedir cada imagem.
 
 ---
 
-## Lista de imagens
+## Elementos dos 5 ingredientes estrela
+
+Peça estas imagens primeiro: são os elementos que vão aparecer na capa, nas aberturas de capítulo e espalhados pelo ebook. Cada ingrediente tem 3 versões: **inteiro**, **cortado** e **aproveitamento integral**.
+
+### Abóbora cabotiá (japonesa)
+
+**Elemento A1: Cabotiá inteira.** Uma abóbora cabotiá inteira, achatada e redonda, casca verde jade escuro com gomos marcados e pintinhas verde jade claro, cabinho curto e torto em verde jade.
+
+**Elemento A2: Cabotiá cortada.** Uma cabotiá partida ao meio vista de frente, polpa dourada grossa, miolo com fibras e sementes desenhadas como pequenas gotas off-white, e uma fatia em meia-lua ao lado.
+
+**Elemento A3: Cabotiá da casca à semente.** Composição com cubos de abóbora dourados, tirinhas de casca verde jade escuro enroladas e um montinho de sementes torradas, mostrando que nada vai para o lixo.
+
+### Banana-da-terra
+
+**Elemento B1: Penca de banana-da-terra.** Três bananas-da-terra grandes e retas, com quinas marcadas, casca dourada com algumas pintinhas verde jade escuro, ponta e cabinho em verde jade escuro.
+
+**Elemento B2: Banana-da-terra cortada.** Uma banana-da-terra meio descascada, com a casca aberta em tiras, e rodelas cortadas na diagonal ao lado, douradas e levemente tostadas.
+
+**Elemento B3: Banana do salgado ao doce.** Lado a lado: uma frigideira azul safira com rodelas de banana douradas e um prato azul safira com banana caramelizada e canela, mostrando as duas versões.
+
+### Sobrecoxa de frango com osso e pele
+
+**Elemento C1: Sobrecoxa crua.** Duas sobrecoxas de frango cruas sobre uma tábua azul safira, pele lisa em verde jade claro, osso aparente em off-white com contorno azul safira.
+
+**Elemento C2: Sobrecoxa de pele crocante.** Duas sobrecoxas assadas com a pele bem dourada e estalando, desenhada com linhas vazadas de textura crocante, em uma frigideira de ferro azul safira, com dentes de alho e um ramo de tomilho verde jade.
+
+**Elemento C3: Sobrecoxa da pele ao osso.** Composição com uma sobrecoxa dourada, um pedaço de pele crocante separado e uma panelinha azul safira de caldo com o osso dentro, mostrando o aproveitamento completo.
+
+### Mandioca (aipim / macaxeira)
+
+**Elemento D1: Mandioca inteira.** Três raízes de mandioca compridas e levemente tortas, casca verde jade escuro com textura de linhas rugosas, pontas cortadas mostrando o miolo off-white.
+
+**Elemento D2: Mandioca descascada e cortada.** Toletes de mandioca descascados, brancos com contorno azul safira e o fio central desenhado, e a casca enrolada ao lado.
+
+**Elemento D3: Mandioca coringa.** Composição com palitos de mandioca frita dourados, um montinho de purê cremoso em uma tigela azul safira e um punhado de farinha de mandioca dourada.
+
+### Cenoura
+
+**Elemento E1: Maço de cenouras.** Quatro cenouras douradas inteiras com linhas vazadas de textura, ramas verdes cheias em verde jade e verde jade claro, amarradas com um barbante azul safira.
+
+**Elemento E2: Cenoura cortada.** Cenouras cortadas de três jeitos: rodelas, palitos e fitas finas enroladas, sobre uma tábua azul safira.
+
+**Elemento E3: Cenoura da rama à casca.** Composição com uma cenoura assada inteira dourada e brilhante, um montinho de pesto feito com a rama verde jade e cascas de cenoura enroladas, mostrando o aproveitamento integral.
+
+### Composição dos 5 juntos
+
+**Elemento F1: Os 5 ingredientes.** Os cinco ingredientes estrela juntos em uma composição harmoniosa: meia abóbora cabotiá, uma penca de banana-da-terra, duas sobrecoxas douradas, uma mandioca com a ponta cortada e um maço de cenouras com rama. Ideal para capa.
+
+**Elemento F2: Cesta de feira.** Uma cesta de feira azul safira transbordando com os cinco ingredientes estrela, com folhas verde jade saindo pelas bordas.
+
+---
+
+## Lista de imagens da versão atual do ebook
+
+Estas imagens acompanham as receitas que estão hoje no ebook (arroz, feijão, frango, ovo e banana).
 
 ### Capa e contracapa
 
