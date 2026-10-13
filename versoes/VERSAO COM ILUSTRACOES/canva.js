@@ -17,7 +17,7 @@ const SAIDA = path.join(ROOT, "Cozinha-Mamede-Canva.pptx");
 const PX = 1 / 96; // px → polegadas
 const PT = 0.75; // px → pt
 
-// Barlow Condensed tem um nome de fonte por peso (como na VERSAO YOUTUBE)
+// Barlow Condensed tem um nome de fonte por peso (nomes usados no Canva)
 const fonteCanva = (r) =>
   r.fonte === "Barlow Condensed"
     ? { fontFace: r.peso >= 800 ? "Barlow Condensed ExtraBold" : "Barlow Condensed SemiBold", bold: false }

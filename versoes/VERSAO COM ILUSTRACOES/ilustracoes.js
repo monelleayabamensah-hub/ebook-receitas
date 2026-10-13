@@ -1,4 +1,4 @@
-// Ilustrações chapadas no estilo da VERSAO YOUTUBE (traço de xilogravura,
+// Ilustrações chapadas no estilo da primeira versão ilustrada (traço de xilogravura,
 // cores sólidas, linhas "vazadas" na cor do fundo). Todas em viewBox 300 × 250.
 
 const SOL = "#FFC926";
@@ -11,7 +11,7 @@ const KIWI = "#9ABC05";
 const svg = (corpo) => `<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">${corpo}</svg>`;
 const rep = (pts, f) => pts.map((p) => f(...p)).join("");
 
-// ── peças reaproveitadas da VERSAO YOUTUBE
+// ── peças reaproveitadas da primeira versão ilustrada
 const tigela = () => `
   <path d="M26 118 L274 118 C272 182 226 216 150 216 C74 216 28 182 26 118 Z" fill="${FLORESTA}"/>
   <path d="M34 128 C110 138 190 138 266 128" stroke="${CREME}" stroke-width="3" fill="none" stroke-linecap="round"/>
@@ -50,7 +50,7 @@ function abobora() {
   <path d="M26 74 C30 54 40 40 60 30" stroke="${FLORESTA}" stroke-width="3" fill="none" stroke-linecap="round"/>`);
 }
 
-// ── banana (da VERSAO YOUTUBE)
+// ── banana (da primeira versão ilustrada)
 function banana() {
   const b = (tx, ty, rot, s = 1) => `
   <g transform="translate(${tx} ${ty}) rotate(${rot}) scale(${s})">
@@ -66,7 +66,7 @@ function banana() {
   ${rep([[220, 214], [252, 222], [238, 192]], (x, y) => `<circle cx="${x}" cy="${y}" r="14" fill="${CREME}" stroke="${CENOURA}" stroke-width="3"/><circle cx="${x}" cy="${y}" r="5" fill="none" stroke="${FLORESTA}" stroke-width="2"/>`)}`);
 }
 
-// ── frango (da VERSAO YOUTUBE)
+// ── frango (da primeira versão ilustrada)
 function frango() {
   const coxa = (tx, ty, s, rot) => `
   <g transform="translate(${tx} ${ty}) rotate(${rot}) scale(${s})">
@@ -162,7 +162,7 @@ function panela() {
   <ellipse cx="244" cy="58" rx="16" ry="11" fill="${CENOURA}" transform="rotate(-30 244 58)"/>`);
 }
 
-// ── talheres (da VERSAO YOUTUBE)
+// ── talheres (da primeira versão ilustrada)
 function talheres() {
   return svg(`
   <g transform="rotate(-28 150 125)">
@@ -179,7 +179,7 @@ function talheres() {
   ${rep([[40, 200, 6, SOL], [262, 210, 5, FLORESTA], [56, 60, 4, CENOURA], [250, 50, 6, SOL]], (x, y, r, c) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`)}`);
 }
 
-// ── pote de conserva (da VERSAO YOUTUBE), para o aproveitamento
+// ── pote de conserva (da primeira versão ilustrada), para o aproveitamento
 function pote() {
   return svg(`
   <rect x="88" y="30" width="124" height="28" rx="6" fill="${CENOURA}"/>

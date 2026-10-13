@@ -1,4 +1,4 @@
-# Versão LUQ
+# Versão com fotografias
 
 Ebook **COZINHA MAMEDE: 5 ingredientes. 15 transformações.** com a estrutura completa do método: em cada capítulo, O Ingrediente, Antes da Panela, 3 Transformações, O Pulo do Chef, Não Tem Isso? e Aproveita Isso Também, mais o bônus Os 10 Pulos do Mamede.
 

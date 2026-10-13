@@ -1,6 +1,6 @@
-# Prompt único para criar as imagens no ChatGPT (Versão LUQ Ilustrada)
+# Prompt único para criar as imagens no ChatGPT (Versão com ilustrações)
 
-Mesmo estilo, paleta e regras do primeiro prompt (o da VERSAO YOUTUBE), agora com a lista certa: os 5 ingredientes e as 15 transformações da Cozinha Mamede.
+Mesmo estilo, paleta e regras do primeiro prompt (o da primeira versão ilustrada), agora com a lista certa: os 5 ingredientes e as 15 transformações da Cozinha Mamede.
 
 1. Copie todo o bloco abaixo e cole numa conversa nova do ChatGPT. Se puder, anexe junto a imagem de referência (a ficha da receita de ramen) ou uma das imagens de que você já gostou.
 2. Depois de cada imagem, responda **"próxima"** para ele seguir a lista.

@@ -1,8 +1,8 @@
-// Gera o ebook (Versão LUQ Ilustrada): node build.js
+// Gera o ebook (Versão com ilustrações): node build.js
 // Saídas: ebook.html e Cozinha-Mamede.pdf
 //
-// Conteúdo: conteudo.js (o mesmo da VERSAO LUQ).
-// Identidade visual: a mesma da VERSAO YOUTUBE (fundo creme, verde floresta,
+// Conteúdo: conteudo.js (o mesmo da VERSAO COM FOTOGRAFIAS).
+// Identidade visual: a da primeira versão ilustrada (fundo creme, verde floresta,
 // cenoura, tomate, sol e kiwi; títulos em Barlow Condensed, texto em Short
 // Stack, traçados soltos, círculos numerados e ilustrações chapadas).
 //
@@ -21,7 +21,7 @@ const SAIDA_PDF = path.join(ROOT, "Cozinha-Mamede.pdf");
 const SAIDA_HTML = path.join(ROOT, "ebook.html");
 const pad = (n) => String(n).padStart(2, "0");
 
-// ─────────────────────────────────────────── traçados soltos (da VERSAO YOUTUBE)
+// ─────────────────────────────────────────── traçados soltos (da primeira versão ilustrada)
 const TRACOS = {
   tr: "M112 16 C136 10 166 12 174 22 C180 30 170 36 166 29 C162 22 176 16 186 24 C196 32 200 58 194 80 C190 92 182 92 184 84 C186 76 196 80 197 92 C199 110 196 132 200 156",
   bl: "M7 196 C12 216 15 240 12 258 C10 268 3 268 5 260 C7 252 16 258 20 266 C26 280 52 290 96 292 C106 292 110 286 104 285 C98 284 98 294 118 295",

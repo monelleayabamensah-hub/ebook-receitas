@@ -1,7 +1,8 @@
 # Versões do ebook
 
-Duas versões do mesmo ebook de receitas, para comparação.
+Duas versões do ebook **Cozinha Mamede: 5 ingredientes. 15 transformações.**, com o mesmo texto (abóbora cabotiá, banana-da-terra, sobrecoxa de frango, mandioca e cenoura).
 
-- `VERSAO YOUTUBE/`
-- `VERSAO LUQ/`
-- `VERSAO LUQ ILUSTRADA/`: conteúdo da LUQ com a identidade visual da YOUTUBE
+- `VERSAO COM ILUSTRACOES/`: visual ilustrado (creme, verde floresta, cenoura, tomate, sol e kiwi; Barlow Condensed e Short Stack)
+- `VERSAO COM FOTOGRAFIAS/`: visual com fotografias (creme, verde-oliva e terracota; Playfair Display e Montserrat)
+
+Cada pasta tem o PDF, a versão editável para o Canva (.pptx) e o comando para criar as imagens no ChatGPT.
