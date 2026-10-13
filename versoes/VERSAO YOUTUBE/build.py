@@ -2,7 +2,7 @@
 
 Estilo inspirado em ficha de receita ilustrada: fundo creme, verde floresta,
 cenoura, tomate, sol e kiwi, títulos condensados em caixa-alta (Barlow
-Condensed), texto em Poppins e traçados soltos.
+Condensed), texto em Short Stack e traçados soltos.
 
 Uso:  python3 build.py   ->  ebook-cozinha-mamede.html
 """
@@ -602,13 +602,11 @@ for i, (html, _) in enumerate(pages):
 CSS = f"""
 @font-face {{ font-family: 'Barlow Condensed'; src: url(fonts/barlow-condensed-600.woff2) format('woff2'); font-weight: 600; }}
 @font-face {{ font-family: 'Barlow Condensed'; src: url(fonts/barlow-condensed-800.woff2) format('woff2'); font-weight: 800; }}
-@font-face {{ font-family: 'Poppins'; src: url(fonts/poppins-400.woff2) format('woff2'); font-weight: 400; }}
-@font-face {{ font-family: 'Poppins'; src: url(fonts/poppins-600.woff2) format('woff2'); font-weight: 600; }}
-@font-face {{ font-family: 'Poppins'; src: url(fonts/poppins-400-italic.woff2) format('woff2'); font-style: italic; }}
+@font-face {{ font-family: 'Short Stack'; src: url(fonts/short-stack.woff2) format('woff2'); }}
 @page {{ size: A4; margin: 0; }}
 * {{ box-sizing: border-box; }}
 html, body {{ margin: 0; background: {FOREST}; }}
-body {{ font-family: 'Poppins', sans-serif; color: {FOREST}; font-size: 9.4pt; line-height: 1.55;
+body {{ font-family: 'Short Stack', cursive; color: {FOREST}; font-size: 8.8pt; line-height: 1.6;
   -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
 .page {{ width: 210mm; height: 297mm; position: relative; overflow: hidden; background: {CREAM};
   margin: 0 auto 10mm; page-break-after: always; break-after: page; }}
@@ -626,7 +624,7 @@ h2 {{ font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transf
   font-size: 19pt; line-height: 1; letter-spacing: .02em; margin: 5mm 0 3.5mm; position: relative; display: inline-block; padding-right: 3mm; }}
 h2 .uline {{ position: absolute; left: -1mm; bottom: -1.2mm; width: calc(100% + 1mm); height: 3mm; z-index: -1; }}
 p {{ margin: 0 0 3mm; max-width: 155mm; }}
-b {{ font-weight: 600; }}
+b {{ font-weight: 400; color: {TOMATO}; }}
 .lead {{ font-size: 11pt; line-height: 1.5; }}
 .meta {{ font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 10pt; letter-spacing: .14em; margin: 0 0 1mm; }}
 .quote {{ font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; color: {CARROT};
@@ -635,8 +633,8 @@ ol.dots {{ list-style: none; counter-reset: d; padding: 0; margin: 0 0 2mm; }}
 ol.dots li {{ counter-increment: d; position: relative; padding-left: 11mm; margin: 0 0 2.4mm; min-height: 7mm;
   display: flex; align-items: center; }}
 ol.dots li::before {{ content: counter(d); position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-  width: 7mm; height: 7mm; border-radius: 50%; background: {CARROT}; color: {CREAM}; font-weight: 600;
-  font-size: 8pt; display: flex; align-items: center; justify-content: center; }}
+  width: 7mm; height: 7mm; border-radius: 50%; background: {CARROT}; color: {CREAM}; font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+  font-size: 10pt; display: flex; align-items: center; justify-content: center; }}
 ul.bul {{ list-style: none; padding: 0; margin: 0 0 2mm; }}
 ul.bul li {{ position: relative; padding-left: 7mm; margin: 0 0 2.4mm; }}
 ul.bul li::before {{ content: ""; position: absolute; left: 1mm; top: 1.8mm; width: 2.4mm; height: 2.4mm;
@@ -645,7 +643,7 @@ ol.steps {{ list-style: none; counter-reset: s; padding: 0; margin: 0 0 2mm; }}
 ol.steps li {{ counter-increment: s; display: grid; grid-template-columns: 12mm 40mm 1fr; align-items: start;
   margin: 0 0 3.4mm; }}
 ol.steps li::before {{ content: counter(s); width: 7mm; height: 7mm; border-radius: 50%; background: {CARROT};
-  color: {CREAM}; font-weight: 600; font-size: 8pt; display: flex; align-items: center; justify-content: center; margin-top: -1mm; }}
+  color: {CREAM}; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 10pt; display: flex; align-items: center; justify-content: center; margin-top: -1mm; }}
 ol.steps .lbl {{ font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 11pt; line-height: 1.25;
   letter-spacing: .04em; color: {TOMATO}; padding-right: 3mm; }}
 table {{ width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 8.8pt; }}
@@ -671,6 +669,7 @@ ul.check li::before {{ content: ""; position: absolute; left: 0; top: -.2mm; wid
 .tip-title {{ font-family: 'Barlow Condensed', sans-serif; font-weight: 800; text-transform: uppercase; color: {TOMATO};
   font-size: 15pt; letter-spacing: .06em; line-height: 1; margin: 0 0 1.5mm; }}
 .tip-var {{ font-size: 8.8pt; }}
+.tip b {{ color: {FOREST}; text-decoration: underline; text-decoration-color: {CARROT}; text-underline-offset: 2px; }}
 .dense table {{ font-size: 8.4pt; }}
 .dense td {{ padding: 1.8mm 2mm; }}
 /* capa */
