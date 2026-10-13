@@ -151,3 +151,20 @@ ol.pulos p { font-size: 9.2pt; }
 .receita h2 { margin: 3.4mm 0 2.4mm; }
 .receita ol.pontos li { margin-bottom: 1.5mm; }
 .receita .ficha { padding: 2.4mm 0; margin-top: 2mm; }
+
+/* abertura da receita (modelo "Spaghetti Bolognese") */
+.abre-receita .conteudo { top: 30mm; height: 245mm; }
+.ar-tag { font: 600 10.5pt var(--titulo); letter-spacing: .1em; text-transform: uppercase; color: var(--cenoura); margin-bottom: 3mm; }
+.ar-titulo { font-size: 58pt; line-height: .88; max-width: 100mm; margin-bottom: 4mm; }
+.ar-nome { font-size: 9pt; max-width: 80mm; color: var(--floresta); }
+.ar-linha { display: block; width: 1.4px; height: 48mm; background: var(--floresta); margin: 12mm 0 14mm 2mm; }
+.ar-ingr { max-width: 72mm; }
+.ar-ingr .ar-ingr-tit { font: 800 17pt var(--titulo); text-transform: uppercase; color: var(--floresta); margin-bottom: 2mm; }
+.ar-ingr p { font-size: 8.4pt; line-height: 1.4; margin-bottom: .6mm; }
+.ar-assina { position: absolute; left: 0; right: 0; bottom: 4mm; text-align: center; font-size: 10pt; max-width: none; }
+.ar-assina span { font: 800 13pt var(--titulo); text-transform: uppercase; letter-spacing: .04em; color: var(--tomate); }
+.ar-prato { position: absolute; width: 168mm; height: 168mm; right: -94mm; top: 58mm; border-radius: 50%;
+  background: #EADCB8; border: 5mm solid var(--floresta); }
+.ar-aro { position: absolute; inset: 6mm; border-radius: 50%; border: 1.4px solid var(--floresta); }
+.ar-ilu { position: absolute; left: 12mm; top: 30mm; width: 120mm; }
+.ar-ilu img { border-radius: 50%; }

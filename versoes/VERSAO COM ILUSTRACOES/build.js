@@ -136,7 +136,23 @@ c.capitulos.forEach((cap, ci) => {
 
   const pagsReceitas = cap.receitas.map((r, i) => {
     const ingr = r.ingredientes.map((g) => `${g.grupo ? `<h3>${g.grupo}</h3>` : ""}${bolinhas(g.itens, "ingr")}`).join("");
-    return folha(
+    // Página de abertura da receita: título grande, ingredientes e o prato saindo pela borda
+    const arq = `r${n}-${i + 1}`;
+    const img = imagem(arq);
+    const abertura = folha(
+      `<div class="ar-prato"><div class="ar-aro"></div><div class="ar-ilu">${img ? `<img src="${img}" alt="">` : ILU[icone]()}</div></div>
+       <p class="ar-tag">#cozinhamamede · transformação ${pad(i + 1)}</p>
+       <h1 class="ar-titulo">${r.curto}</h1>
+       <p class="ar-nome">${r.nome}</p>
+       <span class="ar-linha"></span>
+       <div class="ar-ingr">
+         <p class="ar-ingr-tit">Ingredientes</p>
+         ${r.ingredientes.map((g) => g.itens.map((t) => `<p>${t}</p>`).join("")).join("")}
+       </div>
+       <p class="ar-assina">receitas por <span>Chef Allan Mamede</span></p>`,
+      { id: arq, cls: "abre-receita", semRodape: true }
+    );
+    folha(
       `${ilu(icone, "canto pequeno", `r${n}-${i + 1}`)}
        <p class="kicker">Transformação ${pad(i + 1)} · ${NOMES_CURTOS[ci]}</p>
        <h1 class="receita-titulo com-arte">${r.nome}</h1>
@@ -148,8 +164,9 @@ c.capitulos.forEach((cap, ci) => {
        ${h2("Modo de preparo")}
        ${pontos(r.preparo)}
        ${segredo(r.dica)}`,
-      { id: `r${n}-${i + 1}`, cls: "receita" }
+      { cls: "receita" }
     );
+    return abertura;
   });
 
   folha(

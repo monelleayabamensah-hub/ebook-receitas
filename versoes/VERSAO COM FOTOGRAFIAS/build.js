@@ -100,7 +100,7 @@ folha(
      <div class="script">Vamos cozinhar!</div>
      <div class="coracao-pq">${I.coracaoL}</div>
    </div>
-   <div class="painel">${prato("abobora", foto("boas-vindas"), "painel-prato")}${prato("cenoura", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
+   <div class="painel">${prato("abobora", foto("boas-vindas"), "painel-prato")}${foto("boas-vindas") ? "" : prato("cenoura", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
   { cls: "com-painel", id: "proposta" }
 );
 
@@ -223,7 +223,7 @@ folha(
      <div class="script">Bom apetite,<br>Chef Allan Mamede</div>
      <div class="coracao-pq cheio">${I.coracao}</div>
    </div>
-   <div class="painel">${prato("banana", foto("obrigado"), "painel-prato")}${prato("frango", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
+   <div class="painel">${prato("banana", foto("obrigado"), "painel-prato")}${foto("obrigado") ? "" : prato("frango", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
   { cls: "com-painel", id: "fim" }
 );
 
