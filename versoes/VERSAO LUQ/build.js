@@ -4,9 +4,9 @@
 // Cada página é uma "folha" A4 de tamanho fixo. Se o conteúdo de alguma folha
 // não couber, o build avisa qual é — aí é só encurtar o texto em conteudo.js.
 //
-// Fotos (opcional): coloque imagens na pasta fotos/ e indique no conteudo.js
-// (campo `foto` do capítulo ou da receita, ou `fotoCapa`). Sem foto, o espaço
-// mostra uma ilustração do ingrediente num prato.
+// Fotos (opcional): salve as imagens na pasta fotos/ com os nomes da lista em
+// PROMPT-IMAGENS-CHATGPT.md (capa, boas-vindas, cap1…cap5, r1-1…r5-3,
+// aproveita1…aproveita5, obrigado). Sem foto, o espaço mostra a ilustração.
 
 const fs = require("fs");
 const path = require("path");
@@ -49,6 +49,8 @@ const I = {
 
 // ─────────────────────────────────────────── utilitários de layout
 const fotoExiste = (f) => f && fs.existsSync(path.join(ROOT, f));
+// Fotos por nome: fotos/capa.jpg, fotos/cap1.jpg, fotos/r1-1.jpg… (jpg, jpeg, png ou webp)
+const foto = (nome) => ["jpg", "jpeg", "png", "webp"].map((e) => `fotos/${nome}.${e}`).find(fotoExiste) || null;
 const prato = (icone, foto, cls = "") =>
   fotoExiste(foto)
     ? `<div class="prato com-foto ${cls}" style="background-image:url('${foto}')"></div>`
@@ -82,7 +84,7 @@ folha(
      <div class="selo"><span>${I.faca}</span><b>COZINHE MELHOR<br>DESPERDICE MENOS</b></div>
    </div>
    <div class="capa-dir">
-     ${fotoExiste(c.fotoCapa) ? prato(null, c.fotoCapa, "capa-prato") : `<div class="prato capa-prato"><div class="prato-borda"></div><div class="capa-ingredientes">${capaIcones.map((k) => `<span>${I[k]}</span>`).join("")}</div></div>`}
+     ${foto("capa") ? prato(null, foto("capa"), "capa-prato") : `<div class="prato capa-prato"><div class="prato-borda"></div><div class="capa-ingredientes">${capaIcones.map((k) => `<span>${I[k]}</span>`).join("")}</div></div>`}
    </div>
    <div class="faixa">POR ${c.autor.toUpperCase()}</div>`,
   { cls: "capa", semRodape: true }
@@ -98,7 +100,7 @@ folha(
      <div class="script">Vamos cozinhar!</div>
      <div class="coracao-pq">${I.coracaoL}</div>
    </div>
-   <div class="painel">${prato("abobora", c.fotoBoasVindas, "painel-prato")}${prato("cenoura", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
+   <div class="painel">${prato("abobora", foto("boas-vindas"), "painel-prato")}${prato("cenoura", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
   { cls: "com-painel", id: "proposta" }
 );
 
@@ -151,7 +153,7 @@ c.capitulos.forEach((cap, ci) => {
              <div><span class="circ">${I.pessoas}</span><b>${r.rende}</b><small>rendimento</small></div>
            </div>
          </div>
-         ${prato(cap.icone, r.foto, "rec-prato")}
+         ${prato(cap.icone, foto(`r${n}-${i + 1}`), "rec-prato")}
        </div>
        <div class="rec-corpo">
          <div class="rec-ingr"><h4>Ingredientes</h4>${ingr}</div>
@@ -181,7 +183,7 @@ c.capitulos.forEach((cap, ci) => {
        <p class="lead">Cascas, talos, ramas e aparas: o que ia para o lixo vira sabor.</p>
        <div class="aproveita">${cap.aproveita.map((a) => `<div class="ap-item"><span class="quad">${I.folha}</span><div><h4>${a.nome}</h4><p>${a.texto}</p></div></div>`).join("")}</div>
      </div>
-     <div class="painel">${prato(cap.icone, null, "painel-prato")}<div class="painel-base">${I.folha}</div></div>`,
+     <div class="painel">${prato(cap.icone, foto(`aproveita${n}`), "painel-prato")}<div class="painel-base">${I.folha}</div></div>`,
     { cls: "com-painel" }
   );
 
@@ -193,7 +195,7 @@ c.capitulos.forEach((cap, ci) => {
         <div class="apelido">${cap.apelido}</div>
         <p class="lead">${cap.porQue}</p>
       </div>
-      ${prato(cap.icone, cap.foto, "ab-prato")}
+      ${prato(cap.icone, foto(`cap${n}`), "ab-prato")}
     </div>
     ${rotulo("O ingrediente")}
     <div class="corrido">${cap.ingrediente.map((p) => `<p>${p}</p>`).join("")}</div>
@@ -221,7 +223,7 @@ folha(
      <div class="script">Bom apetite,<br>Chef Allan Mamede</div>
      <div class="coracao-pq cheio">${I.coracao}</div>
    </div>
-   <div class="painel">${prato("banana", null, "painel-prato")}${prato("frango", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
+   <div class="painel">${prato("banana", foto("obrigado"), "painel-prato")}${prato("frango", null, "painel-prato2")}<div class="painel-base">${I.chapeu}</div></div>`,
   { cls: "com-painel", id: "fim" }
 );
 

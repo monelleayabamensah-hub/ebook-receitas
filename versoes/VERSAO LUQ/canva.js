@@ -190,8 +190,9 @@ function extrair() {
     s.background = { color: "F7F2EA" };
     for (const it of itens) {
       if (it.tipo === "forma") {
-        if (it.foto && fs.existsSync(path.join(ROOT, it.foto))) {
-          s.addImage({ path: path.join(ROOT, it.foto), x: it.x * PX, y: it.y * PX, w: it.w * PX, h: it.h * PX, rounding: it.elipse, sizing: { type: "cover", w: it.w * PX, h: it.h * PX } });
+        const arq = it.foto && (it.foto.startsWith("file:") ? require("url").fileURLToPath(it.foto) : path.join(ROOT, it.foto));
+        if (arq && fs.existsSync(arq)) {
+          s.addImage({ path: arq, x: it.x * PX, y: it.y * PX, w: it.w * PX, h: it.h * PX, rounding: it.elipse, sizing: { type: "cover", w: it.w * PX, h: it.h * PX } });
           continue;
         }
         const opts = { x: it.x * PX, y: it.y * PX, w: it.w * PX, h: it.h * PX };
