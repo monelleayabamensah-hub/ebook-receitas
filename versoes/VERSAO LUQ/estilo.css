@@ -1,0 +1,254 @@
+:root {
+  --creme: #F7F2EA;
+  --bege: #EEE6D8;
+  --bege-esc: #E2D6C2;
+  --verde: #4E5B38;
+  --verde-esc: #3E4A2C;
+  --terra: #C2552D;
+  --tinta: #2F2A25;
+  --suave: #6B645B;
+  --linha: #DDD2C0;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --script: "Allura", cursive;
+}
+
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--creme); color: var(--tinta); }
+body {
+  font: 400 8.9pt/1.62 var(--sans);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+h1, h2, h3, h4, h5, p { margin: 0; }
+p { margin-bottom: 0.75em; }
+b { font-weight: 600; }
+a { color: inherit; text-decoration: none; }
+svg { display: block; width: 100%; height: 100%; }
+
+/* ─────────────────────────────── folha A4 */
+.folha {
+  width: 210mm; height: 297mm;
+  position: relative; overflow: hidden;
+  padding: 17mm 18mm 0;
+  break-after: page;
+  background: var(--creme);
+}
+.folha:last-child { break-after: auto; }
+.conteudo { height: 258mm; overflow: visible; position: relative; }
+.rodape {
+  position: absolute; left: 18mm; right: 18mm; bottom: 10mm;
+  display: flex; justify-content: space-between;
+  border-top: 0.6pt solid var(--linha); padding-top: 2.6mm;
+  font: 600 6.3pt var(--sans); letter-spacing: 0.16em; color: var(--suave);
+}
+
+/* ─────────────────────────────── tipografia */
+.titulo { font-weight: 400; margin-bottom: 6mm; }
+.titulo span {
+  display: block; font: 400 14pt/1.15 var(--serif);
+  text-transform: uppercase; letter-spacing: 0.05em; color: var(--tinta);
+}
+.titulo em {
+  display: block; font: 400 27pt/1.1 var(--serif); font-style: normal;
+  text-transform: uppercase; letter-spacing: 0.03em; color: var(--verde);
+}
+.titulo-traco { display: block; width: 13mm; height: 0.9pt; background: var(--tinta); margin-top: 4.5mm; }
+.titulo.menor em { font-size: 21pt; }
+.titulo.abertura em, .titulo.grande em { color: var(--terra); }
+.titulo.grande span { font-size: 26pt; }
+.titulo.grande em { font-size: 36pt; }
+.titulo.grande .titulo-traco { display: none; }
+
+.titulo-misto { font: 400 26pt/1.15 var(--serif); margin: 4mm 0 7mm; color: var(--tinta); }
+.titulo-misto em { font-style: normal; color: var(--terra); }
+
+.rotulo {
+  font: 600 7pt var(--sans); letter-spacing: 0.2em; text-transform: uppercase; color: var(--tinta);
+  margin: 0 0 2.5mm;
+}
+.traco { width: 13mm; height: 0.9pt; background: var(--tinta); margin: 1mm 0 5mm; }
+.lead { font: 400 10.2pt/1.6 var(--sans); color: var(--suave); max-width: 125mm; margin-bottom: 6mm; }
+.corrido p { font-size: 9.9pt; line-height: 1.72; }
+.espaco { height: 9mm; }
+.script { font: 400 30pt/1.05 var(--script); color: var(--verde); margin-top: 7mm; }
+.coracao-pq { width: 7mm; height: 7mm; color: var(--terra); margin-top: 4mm; }
+.coracao-pq.cheio { color: var(--verde); }
+
+/* ícones em quadrado e círculos numerados */
+.quad {
+  flex: none; width: 10mm; height: 10mm; border: 0.9pt solid var(--verde); border-radius: 2mm;
+  display: grid; place-items: center; color: var(--verde); padding: 2mm;
+}
+.quad.terra { border-color: var(--terra); color: var(--terra); }
+.quad.num { font: 600 9pt var(--sans); padding: 0; background: var(--verde); color: #fff; }
+.pill {
+  flex: none; width: 7mm; height: 7mm; border-radius: 50%; background: var(--verde); color: #fff;
+  display: grid; place-items: center; font: 600 6.8pt var(--sans);
+}
+.pill.terra { background: var(--terra); }
+
+/* ─────────────────────────────── prato (ilustração no lugar da foto) */
+.prato {
+  position: relative; border-radius: 50%;
+  background: radial-gradient(circle at 42% 38%, #FFFDF9 0%, #F6F0E6 55%, #E9DFCF 100%);
+  box-shadow: 0 3mm 8mm rgba(80, 60, 30, 0.16), inset 0 0 0 1.2mm #fff;
+  display: grid; place-items: center;
+}
+.prato-borda { position: absolute; inset: 14%; border-radius: 50%; border: 0.8pt solid var(--bege-esc); }
+.prato-icone { width: 46%; height: 46%; color: var(--terra); }
+.prato.com-foto { background-size: cover; background-position: center; box-shadow: 0 3mm 8mm rgba(80, 60, 30, 0.18); }
+
+/* ─────────────────────────────── capa */
+.capa { padding: 0; }
+.capa .conteudo { height: 297mm; }
+.capa-esq { position: absolute; left: 18mm; top: 20mm; width: 100mm; z-index: 2; }
+.marca { display: flex; align-items: center; gap: 3mm; }
+.marca svg { width: 10mm; height: 10mm; color: var(--tinta); }
+.marca b { display: block; font: 700 7.5pt var(--sans); letter-spacing: 0.14em; }
+.marca small { display: block; font: 400 6pt var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--suave); }
+.capa-titulo { margin-top: 34mm; }
+.capa-o { display: block; font: 400 17pt var(--serif); letter-spacing: 0.08em; color: var(--tinta); }
+.capa h1 { font-weight: 400; margin: 1mm 0 2mm; }
+.capa h1 span, .capa h1 em { display: block; font: 400 52pt/1.02 var(--serif); font-style: normal; }
+.capa h1 span { color: var(--verde); }
+.capa h1 em { color: var(--terra); }
+.capa .traco { margin: 8mm 0 6mm; width: 16mm; }
+.capa-lista { list-style: none; padding: 0; margin: 0; font: 400 9.5pt/1.75 var(--sans); }
+.selo { display: flex; align-items: center; gap: 4mm; margin-top: 30mm; }
+.selo span { width: 17mm; height: 17mm; border-radius: 50%; background: var(--verde); color: #fff; padding: 4mm; display: block; }
+.selo b { font: 600 7pt/1.6 var(--sans); letter-spacing: 0.14em; }
+.capa-dir { position: absolute; right: -38mm; top: 70mm; }
+.capa-prato { width: 150mm; height: 150mm; }
+.capa-ingredientes {
+  position: absolute; inset: 22%; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; place-items: center; transform: translateX(-9mm);
+}
+.capa-ingredientes span { width: 20mm; height: 20mm; display: block; }
+.capa-ingredientes span:nth-child(1) { color: #D27A33; }
+.capa-ingredientes span:nth-child(2) { color: #C49A2C; }
+.capa-ingredientes span:nth-child(3) { color: var(--terra); }
+.capa-ingredientes span:nth-child(4) { color: #8A6A48; grid-column: 1 / 2; transform: translateX(13mm); }
+.capa-ingredientes span:nth-child(5) { color: #E06A2C; transform: translateX(13mm); }
+.faixa {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 15mm; background: var(--verde); color: #fff;
+  display: grid; place-items: center; font: 600 8pt var(--sans); letter-spacing: 0.22em;
+}
+
+/* ─────────────────────────────── páginas com painel lateral */
+.com-painel .col-texto { width: 108mm; padding-top: 6mm; }
+.painel { position: absolute; top: -17mm; right: -18mm; width: 74mm; height: 297mm; background: var(--bege); }
+.painel-prato { position: absolute; width: 76mm; height: 76mm; top: 22mm; left: -14mm; }
+.painel-prato2 { position: absolute; width: 50mm; height: 50mm; top: 112mm; left: 22mm; }
+.painel-base {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 62mm; background: var(--verde);
+  display: grid; place-items: center; color: #fff;
+}
+.painel-base svg { width: 13mm; height: 13mm; }
+.com-painel .rodape { right: 92mm; }
+
+/* ─────────────────────────────── jeito mamede */
+.dicas { display: grid; gap: 5mm; }
+.dica { display: flex; gap: 5mm; align-items: flex-start; }
+.dica h4 { font: 600 10.4pt var(--sans); margin-bottom: 0.8mm; }
+.dica p { color: var(--suave); margin: 0; font-size: 9.4pt; line-height: 1.55; }
+.grade { display: grid; grid-template-columns: repeat(3, 1fr); border: 0.6pt solid var(--linha); border-radius: 3mm; overflow: hidden; background: #FBF8F3; }
+.celula { padding: 6mm 4mm 5mm; text-align: center; border-right: 0.6pt solid var(--linha); border-bottom: 0.6pt solid var(--linha); }
+.celula:nth-child(3n) { border-right: 0; }
+.celula:nth-child(n+4) { border-bottom: 0; }
+.cel-ic { display: block; width: 8.5mm; height: 8.5mm; margin: 0 auto 3mm; color: var(--tinta); }
+.celula b { display: block; font: 600 9pt var(--sans); margin-bottom: 1.2mm; }
+.celula small { display: block; font-size: 8pt; line-height: 1.45; color: var(--suave); }
+.medidas { margin-top: 7mm; font-size: 7.6pt; color: var(--suave); }
+.medidas b { font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 6.6pt; color: var(--verde); margin-right: 2mm; }
+
+/* ─────────────────────────────── índices (sumário e aberturas) */
+.indice { list-style: none; padding: 0; margin: 0; }
+.indice li { display: flex; align-items: center; gap: 3.5mm; padding: 2.2mm 0; }
+.indice li a { font: 500 10pt var(--sans); }
+.indice li i { flex: 1; border-bottom: 0.8pt dotted #B9AC98; transform: translateY(1mm); }
+.indice li b { font: 600 8.6pt var(--sans); width: 7mm; text-align: right; }
+.indice li.sub { padding: 0.6mm 0 0.6mm 10.5mm; }
+.indice li.sub a { font: 400 8.6pt var(--sans); color: var(--suave); }
+.indice li.sub b { font-weight: 400; color: var(--suave); font-size: 7.8pt; }
+.sumario li:not(.sub) { margin-top: 1.2mm; }
+
+/* ─────────────────────────────── abertura de capítulo */
+.ab-topo { position: relative; min-height: 88mm; }
+.ab-txt { width: 98mm; padding-top: 4mm; }
+.titulo.abertura em { font-size: 30pt; }
+.apelido { font: italic 400 12pt var(--serif); color: var(--suave); margin: -2mm 0 5mm; }
+.ab-prato { position: absolute; width: 92mm; height: 92mm; top: -6mm; right: -34mm; }
+.abertura .corrido { margin-bottom: 6mm; }
+.abertura .indice li { border-bottom: 0.6pt solid var(--linha); padding: 3.2mm 0; }
+.abertura .indice li a small { display: block; font: 600 6.4pt var(--sans); letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.6mm; }
+.abertura .indice li a { font-size: 10pt; max-width: 120mm; }
+.abertura .indice li a span { display: block; }
+
+/* ─────────────────────────────── antes da panela */
+.antes { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.caixa { background: #FBF8F3; border: 0.6pt solid var(--linha); border-radius: 3mm; padding: 5mm 5mm 3mm; }
+.caixa.larga { grid-column: 1 / -1; }
+.caixa-topo { display: flex; align-items: center; gap: 3.5mm; margin-bottom: 3.5mm; }
+.caixa-topo h4 { font: 600 8pt var(--sans); letter-spacing: 0.14em; text-transform: uppercase; }
+ul.pontos, ul.setas { list-style: none; padding: 0; margin: 0; }
+ul.pontos li, ul.setas li { position: relative; padding-left: 4.5mm; margin-bottom: 2mm; font-size: 9.4pt; line-height: 1.55; }
+ul.pontos li::before { content: ""; position: absolute; left: 0.5mm; top: 1.9mm; width: 1.4mm; height: 1.4mm; border-radius: 50%; background: var(--tinta); }
+ul.setas li::before { content: "→"; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+
+/* ─────────────────────────────── receita */
+.rec-cab { position: relative; min-height: 62mm; }
+.rec-cab-txt { width: 112mm; }
+.rec-titulo { font: 400 24pt/1.18 var(--serif); color: var(--verde); margin: 1mm 0 5mm; }
+.rec-sub { font: italic 400 11pt/1.4 var(--serif); color: var(--terra); margin: -3mm 0 5mm; }
+.rec-meta { display: flex; gap: 8mm; }
+.rec-meta > div { display: grid; grid-template-columns: 8mm auto; column-gap: 2.5mm; align-items: center; }
+.circ { grid-row: span 2; width: 8mm; height: 8mm; border: 0.8pt solid var(--tinta); border-radius: 50%; padding: 1.5mm; display: block; }
+.rec-meta b { font: 600 7.4pt var(--sans); letter-spacing: 0.06em; text-transform: uppercase; }
+.rec-meta small { font: 400 6.4pt var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--suave); }
+.rec-prato { position: absolute; width: 66mm; height: 66mm; top: -10mm; right: -30mm; }
+.rec-corpo { margin-bottom: 5mm; display: grid; grid-template-columns: 60mm 1fr; gap: 9mm; margin-top: 3mm; }
+.rec-corpo h4 { font: 700 7.6pt var(--sans); letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 3mm; padding-bottom: 2mm; border-bottom: 0.6pt solid var(--linha); }
+.rec-ingr h5 { font: 600 6.6pt var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--terra); margin: 3mm 0 1.5mm; }
+.rec-ingr h4 + h5 { margin-top: 0; }
+.rec-ingr ul.pontos li { font-size: 8.9pt; line-height: 1.45; margin-bottom: 1.5mm; }
+.rec-preparo ol { list-style: none; padding: 0; margin: 0; }
+.rec-preparo li { display: flex; gap: 3mm; margin-bottom: 2.6mm; font-size: 9.3pt; line-height: 1.55; }
+.rec-preparo .num {
+  flex: none; width: 5mm; height: 5mm; border-radius: 50%; background: var(--tinta); color: #fff;
+  display: grid; place-items: center; font: 600 6.3pt var(--sans); margin-top: 0.3mm;
+}
+.receita .conteudo { display: flex; flex-direction: column; }
+.toque {
+  margin-top: auto;
+  display: flex; gap: 4mm; align-items: flex-start;
+  background: var(--bege); border-radius: 3mm; padding: 4.5mm 5mm;
+}
+.toque b { display: block; font: 700 7pt var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--verde); margin-bottom: 1mm; }
+.toque p { margin: 0; font: italic 400 10pt/1.5 var(--serif); }
+
+/* ─────────────────────────────── pulo do chef e substituições */
+.subtitulo { font: 400 15pt/1.3 var(--serif); color: var(--terra); margin: -1mm 0 5mm; }
+.pulo { display: grid; grid-template-columns: 1fr 1.25fr; gap: 5mm; }
+.pulo-erro, .pulo-tec { border-radius: 3mm; padding: 5mm; }
+.pulo-erro { background: #FBF8F3; border: 0.6pt solid var(--linha); }
+.pulo-erro p { font-size: 9.4pt; line-height: 1.6; margin: 0; }
+.pulo-tec { background: var(--bege); }
+table.subs { width: 100%; border-collapse: collapse; }
+.subs th { text-align: left; font: 700 6.8pt var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: #fff; background: var(--verde); padding: 2.6mm 4mm; }
+.subs th:first-child { border-radius: 2mm 0 0 2mm; }
+.subs th:last-child { border-radius: 0 2mm 2mm 0; }
+.subs td { padding: 2.6mm 4mm; border-bottom: 0.6pt solid var(--linha); vertical-align: top; font-size: 9.2pt; line-height: 1.5; }
+.subs td:first-child { width: 46mm; font: 400 10pt var(--serif); color: var(--verde); }
+
+/* ─────────────────────────────── aproveita */
+.aproveita { display: grid; gap: 6mm; }
+.ap-item { display: flex; gap: 4.5mm; }
+.ap-item h4 { font: 600 10.6pt var(--sans); margin-bottom: 1.2mm; }
+.ap-item p { font-size: 9.6pt; line-height: 1.62; color: var(--tinta); margin: 0; }
+
+/* ─────────────────────────────── bônus */
+.pulos { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 8mm; }
+.pulos .dica p { font-size: 8.9pt; }
+
+.abertura .indice li a span em { font-style: italic; color: var(--suave); font-weight: 400; }
