@@ -200,6 +200,7 @@ ul.setas li::before { content: "→"; position: absolute; left: 0; color: var(--
 .rec-cab { position: relative; min-height: 62mm; }
 .rec-cab-txt { width: 112mm; }
 .rec-titulo { font: 400 24pt/1.18 var(--serif); color: var(--verde); margin: 1mm 0 5mm; }
+.rec-sub { font: italic 400 11pt/1.4 var(--serif); color: var(--terra); margin: -3mm 0 5mm; }
 .rec-meta { display: flex; gap: 8mm; }
 .rec-meta > div { display: grid; grid-template-columns: 8mm auto; column-gap: 2.5mm; align-items: center; }
 .circ { grid-row: span 2; width: 8mm; height: 8mm; border: 0.8pt solid var(--tinta); border-radius: 50%; padding: 1.5mm; display: block; }
@@ -249,3 +250,5 @@ table.subs { width: 100%; border-collapse: collapse; }
 /* ─────────────────────────────── bônus */
 .pulos { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 8mm; }
 .pulos .dica p { font-size: 8.9pt; }
+
+.abertura .indice li a span em { font-style: italic; color: var(--suave); font-weight: 400; }

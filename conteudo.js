@@ -36,7 +36,7 @@ module.exports = {
       apelido: "ou abóbora japonesa",
       cor: "#C8692A",
       icone: "abobora",
-      porQue: "Versátil, acessível e símbolo de comida afetiva.",
+      porQue: "Versátil, barata e símbolo de comida afetiva. E 100% aproveitável, da casca à semente: exatamente o que pede o consumo consciente.",
       ingrediente: [
         "A cabotiá é a abóbora mais generosa da feira. Tem polpa densa, pouca água e doçura natural, e é justamente isso que permite levá-la do nhoque ao doce de colher sem perder identidade.",
         "O erro mais comum é tratá-la sempre do mesmo jeito: cozida na água, no refogado, como acompanhamento. Quando você assa a cabotiá, a água evapora, os açúcares caramelizam e o sabor se concentra. É outra abóbora.",
@@ -65,6 +65,7 @@ module.exports = {
         {
           rotulo: "O Clássico Afetivo",
           nome: "Nhoque de abóbora tostado na manteiga de garrafa e sálvia",
+          subtitulo: "conforto refinado",
           rende: "4 porções", tempo: "1h15",
           ingredientes: [
             { grupo: "Massa", itens: [
@@ -93,7 +94,8 @@ module.exports = {
         },
         {
           rotulo: "O Inusitado",
-          nome: "Bolinho cremoso assado de abóbora com especiarias e queijo coalho",
+          nome: "Hambúrguer ou bolinho cremoso assado de abóbora com especiarias e queijo coalho",
+          subtitulo: "o lado salgado que ninguém espera",
           rende: "12 bolinhos ou 6 hambúrgueres", tempo: "1h (mais 30 min de geladeira)",
           ingredientes: [
             { itens: [
@@ -120,7 +122,8 @@ module.exports = {
         },
         {
           rotulo: "O Lado Doce",
-          nome: "Doce de abóbora cremoso de colher com coco e raspas de laranja",
+          nome: "Crepúsculo: doce de abóbora cremoso de colher com coco e raspas de laranja",
+          subtitulo: "uma sobremesa de memória afetiva",
           rende: "cerca de 1 kg", tempo: "1h10",
           ingredientes: [
             { itens: [
@@ -165,16 +168,12 @@ module.exports = {
       ],
       aproveita: [
         {
-          nome: "Chips crocantes de casca",
+          nome: "Casca: chips crocantes temperados",
           texto: "Quando a receita pedir abóbora descascada, tire a casca em tiras finas com um descascador de legumes. Misture com um fio de azeite, sal e páprica e espalhe sem amontoar. Leve à airfryer a 180 °C por 8 a 12 minutos, chacoalhando na metade, ou ao forno a 160 °C por 20 a 25 minutos. Elas ficam crocantes ao esfriar.",
         },
         {
-          nome: "Sementes tostadas com páprica",
-          texto: "Lave as sementes numa peneira, separando as fibras, e seque muito bem com um pano. Tempere com azeite, sal e páprica defumada e asse a 160 °C por 20 a 25 minutos, mexendo de vez em quando, até dourarem e estalarem. Use como petisco ou para dar crocância a saladas, sopas e ao próprio nhoque.",
-        },
-        {
-          nome: "Fibras do miolo",
-          texto: "As fibras que envolvem as sementes têm muito sabor. Junte ao caldo de legumes ou ao fundo de frango (capítulo 3).",
+          nome: "Sementes: snack crocante com páprica e sal",
+          texto: "Lave as sementes numa peneira, separando as fibras, e seque muito bem com um pano. Tempere com um fio de azeite, sal e páprica defumada e asse a 160 °C por 20 a 25 minutos, mexendo de vez em quando, até dourarem e estalarem. Use como petisco ou para dar crocância a saladas, sopas e ao próprio nhoque.",
         },
       ],
     },
@@ -185,7 +184,7 @@ module.exports = {
       apelido: "ou banana-prata firme",
       cor: "#B8892A",
       icone: "banana",
-      porQue: "O ingrediente nacional por excelência. Transita do salgado ao doce e traz sofisticação sem custo alto.",
+      porQue: "O ingrediente nacional por excelência. Transita entre o salgado e o doce e leva sofisticação ao prato sem pesar no bolso.",
       ingrediente: [
         "A banana-da-terra é uma banana de cozinhar. Crua, ela é dura e pouco agradável; no fogo, vira outra coisa: macia, caramelizada, cheia de sabor.",
         "O segredo está no estágio de maturação. Verde, ela é rica em amido e se comporta quase como uma batata. Amarela com pintinhas pretas, fica no ponto mais versátil: doce, mas firme. Com a casca quase toda preta, está doce e macia, perfeita para purês e sobremesas.",
@@ -213,6 +212,7 @@ module.exports = {
         {
           rotulo: "A Rápida de Frigideira",
           nome: "Moqueca expressa de frigideira com banana, leite de coco e pimenta",
+          subtitulo: "sem peixe, mas cheia de sabor",
           rende: "3 porções", tempo: "30 min",
           ingredientes: [
             { itens: [
@@ -241,6 +241,7 @@ module.exports = {
         {
           rotulo: "A Textura Surpreendente",
           nome: "Purê aveludado de banana grelhada com noz-moscada",
+          subtitulo: "para acompanhar carnes ou legumes assados",
           rende: "4 porções como acompanhamento", tempo: "25 min",
           ingredientes: [
             { itens: [
@@ -262,7 +263,8 @@ module.exports = {
         },
         {
           rotulo: "A Sobremesa de Chef",
-          nome: "Bananas flambadas com crosta de açúcar mascavo e canela",
+          nome: "Bananas flambadas no rum ou na cachaça com crosta de açúcar mascavo e canela",
+          subtitulo: "a sobremesa de restaurante feita em casa",
           rende: "4 porções", tempo: "15 min",
           ingredientes: [
             { itens: [
@@ -307,7 +309,7 @@ module.exports = {
       ],
       aproveita: [
         {
-          nome: "“Carne” desfiada de casca de banana",
+          nome: "Casca: “carne” vegetal desfiada e temperada",
           texto: "Funciona melhor com cascas de banana-prata ou nanica, maduras e bem lavadas (a da banana-da-terra é mais grossa: cozinhe antes por 15 minutos em água). Corte as pontas e desfie as cascas no comprimento com um garfo. Deixe de molho em água com limão por 10 minutos e escorra. Refogue cebola, alho e tomate, junte as cascas, cominho, páprica e colorau e cozinhe em fogo baixo, tampado, por 15 a 20 minutos, pingando água se secar. Ajuste o sal e finalize com cheiro-verde.",
         },
         {
@@ -323,7 +325,7 @@ module.exports = {
       apelido: "com osso e pele",
       cor: "#A3442A",
       icone: "frango",
-      porQue: "Muito mais suculenta, saborosa e barata que o peito de frango.",
+      porQue: "A proteína é um dos itens que mais pesam no orçamento da família. A sobrecoxa é muito mais saborosa, suculenta e barata que o peito, e com técnica de chef você passa a dominá-la.",
       ingrediente: [
         "Se existe um corte que perdoa, é a sobrecoxa. Por ser carne escura, tem mais gordura e mais colágeno: aguenta mais tempo de fogo, continua suculenta e tem muito mais sabor que o peito.",
         "E ela vem com dois presentes que quase todo mundo joga fora. A pele, que bem trabalhada fica crocante como um torresmo. E o osso, que vira um caldo capaz de transformar qualquer arroz, molho ou sopa.",
@@ -350,6 +352,7 @@ module.exports = {
         {
           rotulo: "A Técnica da Frigideira",
           nome: "Sobrecoxa desossada com pele ultracrocante ao molho rústico de limão e alho",
+          subtitulo: "a pele mais crocante que você já fez",
           rende: "2 a 4 porções", tempo: "35 min",
           ingredientes: [
             { grupo: "Frango", itens: [
@@ -380,6 +383,7 @@ module.exports = {
         {
           rotulo: "O Cozimento Lento",
           nome: "Frango desfiado suculento ao molho de tomate caseiro e ervas",
+          subtitulo: "para massas, tortas e sanduíches",
           rende: "6 porções", tempo: "1h20 (ou 40 min na pressão)",
           ingredientes: [
             { itens: [
@@ -410,6 +414,7 @@ module.exports = {
         {
           rotulo: "O Assado Tecnológico",
           nome: "Sobrecoxa marinada no iogurte com especiarias, assada até dourar",
+          subtitulo: "maciez extrema, no forno ou na airfryer",
           rende: "4 a 6 porções", tempo: "50 min (mais 2 h de marinada)",
           ingredientes: [
             { grupo: "Marinada", itens: [
@@ -458,12 +463,12 @@ module.exports = {
       ],
       aproveita: [
         {
-          nome: "Caldo (fundo) caseiro aromático",
+          nome: "Ossos e aparas: fundo caseiro ultra-aromático",
           texto: "Junte os ossos, peles e aparas de 6 a 8 sobrecoxas (pode ir guardando no freezer). Para um caldo mais escuro e intenso, asse os ossos antes a 200 °C por 30 minutos. Coloque numa panela com 1 cebola cortada ao meio com casca, 1 cenoura com casca, talos de salsinha, 1 folha de louro, 6 grãos de pimenta e 2 litros de água fria.",
         },
         {
           nome: "O ponto do caldo",
-          texto: "Leve ao fogo baixo e nunca deixe ferver forte: a fervura turva o caldo. Retire a espuma que subir. Cozinhe por 2 a 3 horas, coe e leve à geladeira. A gordura endurece por cima: retire e guarde, ela é ótima para refogar. Congele o caldo em forminhas de gelo por até 3 meses e use um cubo para enriquecer arroz, feijão, molhos e o caldo de mandioca do próximo capítulo.",
+          texto: "Leve ao fogo baixo e nunca deixe ferver forte: a fervura turva o caldo. Retire a espuma que subir. Cozinhe por 2 a 3 horas, coe e leve à geladeira. A gordura endurece por cima: retire e guarde, ela é ótima para refogar. Congele o caldo em forminhas de gelo por até 3 meses e use um cubo para enriquecer arroz, feijão, molhos e sopas, como o caldo de mandioca do próximo capítulo. É o seu caldo caseiro, sem cubinhos industrializados.",
         },
       ],
     },
@@ -474,7 +479,7 @@ module.exports = {
       apelido: "aipim, macaxeira",
       cor: "#7D6247",
       icone: "mandioca",
-      porQue: "A raiz do Brasil: rica em amido, acessível e um coringa técnico da nossa culinária.",
+      porQue: "A raiz do Brasil: rica em amido, acessível e um coringa técnico. Une sustentabilidade e brasilidade num ingrediente só.",
       ingrediente: [
         "Poucos ingredientes são tão brasileiros e tão subestimados. A mandioca costuma ficar presa a dois papéis: cozida na manteiga ou frita como acompanhamento.",
         "Mas é justamente o amido dela que a torna um coringa técnico. Ralada crua, ela se une sozinha e fica crocante na frigideira. Cozida e batida, vira um creme aveludado sem precisar de creme de leite. Misturada com queijo, vira biscoito.",
@@ -502,6 +507,7 @@ module.exports = {
         {
           rotulo: "A Crocância Perfeita",
           nome: "Rösti de mandioca recheado na frigideira",
+          subtitulo: "crosta dourada por fora, cremoso por dentro",
           rende: "1 rösti grande (2 a 4 porções)", tempo: "45 min",
           ingredientes: [
             { grupo: "Massa", itens: [
@@ -528,6 +534,7 @@ module.exports = {
         {
           rotulo: "A Culinária Acolhedora",
           nome: "Caldo aveludado de mandioca com gengibre e bacon (ou cogumelos)",
+          subtitulo: "abraço em forma de prato",
           rende: "4 a 6 porções", tempo: "45 min (ou 25 min na pressão)",
           ingredientes: [
             { itens: [
@@ -553,7 +560,8 @@ module.exports = {
         },
         {
           rotulo: "A Surpresa",
-          nome: "Biscoito de mandioca de assadeira",
+          nome: "Biscoito de polvilho e mandioca de assadeira",
+          subtitulo: "rápido para o lanche da tarde",
           rende: "cerca de 30 biscoitos", tempo: "50 min",
           ingredientes: [
             { itens: [
@@ -598,12 +606,12 @@ module.exports = {
       ],
       aproveita: [
         {
-          nome: "Água do cozimento",
+          nome: "Água do cozimento, rica em amido",
           texto: "A água em que a mandioca cozinhou fica rica em amido. Guarde (na geladeira por até 2 dias) e use para dar ponto e cremosidade a molhos, ensopados e ao próprio caldo, no lugar da água ou de parte do creme de leite.",
         },
         {
-          nome: "Farinha crocante de frigideira",
-          texto: "Sobrou mandioca cozida? Rale fino e espalhe numa frigideira com 1 colher de manteiga. Toste em fogo médio, mexendo de vez em quando, até ficar dourada e soltinha. Tempere com sal e use como uma farofa fresca sobre o caldo, saladas, feijão ou ovos.",
+          nome: "“Fariña” crocante de frigideira com as aparas",
+          texto: "Pontas, pedaços quebrados e sobras de mandioca já cozida viram crocância. Rale fino e espalhe numa frigideira com 1 colher de manteiga. Toste em fogo médio, mexendo de vez em quando, até ficar dourada e soltinha. Tempere com sal e use como uma farofa fresca sobre o caldo, saladas, feijão ou ovos.",
         },
         {
           nome: "E as cascas?",
@@ -618,7 +626,7 @@ module.exports = {
       apelido: "da raiz à rama",
       cor: "#D0592A",
       icone: "cenoura",
-      porQue: "Presente em quase toda geladeira, ganha protagonismo indo muito além da salada e do bolo.",
+      porQue: "Está em quase toda geladeira, mas costuma ficar presa à salada ralada ou ao bolo de sempre. Aqui ela vira protagonista.",
       ingrediente: [
         "A cenoura está em quase todo refogado, quase toda salada e quase todo lanche da tarde. E quase sempre como coadjuvante.",
         "Ela tem açúcar natural de sobra e, quando encontra calor seco, carameliza e ganha um sabor profundo, quase de castanha. Ralada e bem refogada, vira a base de um hambúrguer. E, num bolo, ela é que garante a umidade.",
@@ -644,7 +652,8 @@ module.exports = {
       receitas: [
         {
           rotulo: "O Assado Intenso",
-          nome: "Cenouras assadas inteiras, caramelizadas no mel com azeite e tomilho",
+          nome: "Cenouras assadas inteiras, caramelizadas no mel ou melaço com azeite e tomilho",
+          subtitulo: "doçura natural levada ao máximo",
           rende: "4 porções", tempo: "45 min",
           ingredientes: [
             { itens: [
@@ -669,7 +678,8 @@ module.exports = {
         },
         {
           rotulo: "O Prato Principal",
-          nome: "Hambúrguer rústico de cenoura com aveia e especiarias",
+          nome: "Hambúrguer rústico ou bolinho de cenoura com aveia e especiarias",
+          subtitulo: "saboroso e nutritivo",
           rende: "6 hambúrgueres", tempo: "45 min (mais 20 min de geladeira)",
           ingredientes: [
             { itens: [
@@ -697,7 +707,8 @@ module.exports = {
         },
         {
           rotulo: "A Sobremesa de Respeito",
-          nome: "Bolo de cenoura da vovó fofíssimo com calda espelhada",
+          nome: "Bolo de cenoura da vovó com técnica de chef e calda de chocolate espelhada",
+          subtitulo: "massa fofíssima que não sola",
           rende: "1 assadeira de 20 × 30 cm", tempo: "1h10",
           ingredientes: [
             { grupo: "Massa", itens: [
@@ -724,7 +735,7 @@ module.exports = {
             "<b>Calda:</b> aqueça o creme de leite até quase ferver e despeje sobre o chocolate picado. Espere 1 minuto e mexa do centro para fora até ficar liso. Junte o mel e a manteiga.",
             "Com o bolo morno, despeje a calda de uma vez no centro e deixe que ela escorra sozinha, espalhando o mínimo possível, para manter o brilho.",
           ],
-          dica: "A técnica de chef está em separar as etapas: o liquidificador cuida da emulsão (cenoura, ovos e óleo), mas a farinha entra à mão. Bater farinha no liquidificador desenvolve glúten e deixa o bolo pesado e “borrachudo”. O mel na calda é o que dá o efeito espelhado.",
+          dica: "Bolo que sola tem três culpados: farinha batida demais, fermento misturado com força e forno aberto cedo. Por isso o liquidificador cuida só da emulsão (cenoura, ovos e óleo), a farinha entra à mão, o fermento vai por último e o forno fica fechado nos primeiros 25 minutos. O mel na calda é o que dá o efeito espelhado.",
         },
       ],
       pulo: {
@@ -747,11 +758,11 @@ module.exports = {
       ],
       aproveita: [
         {
-          nome: "Chips assados de casca",
+          nome: "Cascas: chips assados",
           texto: "Se descascar as cenouras, guarde as cascas. Seque bem, misture com um fio de azeite, sal e uma pitada de cominho e espalhe sem amontoar. Leve à airfryer a 170 °C por 6 a 8 minutos ou ao forno a 150 °C por 15 a 20 minutos, de olho: elas são finas e passam do ponto rápido.",
         },
         {
-          nome: "Pesto de rama com amendoim",
+          nome: "Ramas (folhas): pesto com amendoim ou castanha",
           texto: "Separe as folhas e os talos finos de 1 maço de rama (cerca de 60 g). Mergulhe por 10 segundos em água fervente e depois em água com gelo: isso fixa a cor e suaviza o amargor. Esprema bem. Bata no processador ou pilão com 50 g de amendoim torrado sem sal, 1 dente de alho, 40 g de parmesão, suco de ½ limão e sal, acrescentando cerca de 120 ml de azeite aos poucos. Use em massas, no hambúrguer de cenoura, sobre as cenouras assadas ou no pão. Dura 5 dias na geladeira, coberto por uma camada de azeite.",
         },
       ],

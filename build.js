@@ -145,6 +145,7 @@ c.capitulos.forEach((cap, ci) => {
          <div class="rec-cab-txt">
            <div class="rotulo">Receita ${n}.${i + 1} · ${r.rotulo}</div>
            <h2 class="rec-titulo">${r.nome}</h2>
+           ${r.subtitulo ? `<p class="rec-sub">${r.subtitulo}</p>` : ""}
            <div class="rec-meta">
              <div><span class="circ">${I.relogio}</span><b>${r.tempo}</b><small>tempo</small></div>
              <div><span class="circ">${I.pessoas}</span><b>${r.rende}</b><small>rendimento</small></div>
@@ -198,7 +199,7 @@ c.capitulos.forEach((cap, ci) => {
     <div class="corrido">${cap.ingrediente.map((p) => `<p>${p}</p>`).join("")}</div>
     ${rotulo("As 3 transformações")}
     <ol class="indice">${cap.receitas
-      .map((r, i) => `<li><span class="pill terra">${pad(i + 1)}</span><a href="#p${pagsReceitas[i]}"><small>${r.rotulo}</small><span>${r.nome}</span></a><i></i><b>${pad(pagsReceitas[i])}</b></li>`)
+      .map((r, i) => `<li><span class="pill terra">${pad(i + 1)}</span><a href="#p${pagsReceitas[i]}"><small>${r.rotulo}</small><span>${r.nome}${r.subtitulo ? ` <em>(${r.subtitulo})</em>` : ""}</span></a><i></i><b>${pad(pagsReceitas[i])}</b></li>`)
       .join("")}</ol>`;
   folhas[pagAbertura - 1].cls = "abertura";
 });
