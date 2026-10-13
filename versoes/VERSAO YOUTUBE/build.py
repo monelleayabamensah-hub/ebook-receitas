@@ -7,16 +7,18 @@ Uso:  python3 build.py   ->  ebook-cozinha-mamede.html
 """
 from pathlib import Path
 
-BLUE = "#2238B8"
-ORANGE = "#EE4B23"
-CREAM = "#F2EADF"
-YELLOW = "#F5B92E"
+SAPPHIRE = "#0F52BA"
+JADE = "#00A86B"
+JADE_LIGHT = "#66CDAA"
+JADE_DARK = "#00553A"
+GOLD = "#FFD700"
+CREAM = "#F6F3EA"
 
 # ---------------------------------------------------------------- ilustrações
 
 def _grains(points):
     return "".join(
-        f'<path d="M{x} {y} q4 -3 9 -1" stroke="{BLUE}" stroke-width="2.6" fill="none" stroke-linecap="round" transform="rotate({r} {x} {y})"/>'
+        f'<path d="M{x} {y} q4 -3 9 -1" stroke="{SAPPHIRE}" stroke-width="2.6" fill="none" stroke-linecap="round" transform="rotate({r} {x} {y})"/>'
         for x, y, r in points
     )
 
@@ -29,87 +31,87 @@ RICE_GRAINS = _grains([
 
 def bowl_body():
     return f"""
-  <path d="M26 118 L274 118 C272 182 226 216 150 216 C74 216 28 182 26 118 Z" fill="{BLUE}"/>
+  <path d="M26 118 L274 118 C272 182 226 216 150 216 C74 216 28 182 26 118 Z" fill="{SAPPHIRE}"/>
   <path d="M34 128 C110 138 190 138 266 128" stroke="{CREAM}" stroke-width="3" fill="none" stroke-linecap="round"/>
   <path d="M44 158 c11 -20 33 -20 42 0 c11 -20 33 -20 42 0 c11 -20 33 -20 42 0 c11 -20 33 -20 42 0 c11 -20 33 -20 42 0" stroke="{CREAM}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
   <path d="M74 186 c8 -14 24 -14 30 0 c8 -14 24 -14 30 0 c8 -14 24 -14 30 0 c8 -14 24 -14 30 0" stroke="{CREAM}" stroke-width="3" fill="none" stroke-linecap="round"/>
   <path d="M84 158 q2 10 6 14 M126 158 q2 10 6 14 M168 158 q2 10 6 14 M210 158 q2 10 6 14" stroke="{CREAM}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <path d="M110 212 L190 212 L183 236 L117 236 Z" fill="{BLUE}"/>
+  <path d="M110 212 L190 212 L183 236 L117 236 Z" fill="{SAPPHIRE}"/>
   <path d="M120 224 L180 224" stroke="{CREAM}" stroke-width="2.5" stroke-linecap="round"/>"""
 
 
 def egg_half(cx, cy, rx=24, ry=17, rot=-10):
     return f"""
   <g transform="rotate({rot} {cx} {cy})">
-    <ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="{CREAM}" stroke="{ORANGE}" stroke-width="3"/>
-    <circle cx="{cx}" cy="{cy}" r="{ry * 0.62:.1f}" fill="{YELLOW}" stroke="{ORANGE}" stroke-width="2.5"/>
+    <ellipse cx="{cx}" cy="{cy}" rx="{rx}" ry="{ry}" fill="{CREAM}" stroke="{JADE}" stroke-width="3"/>
+    <circle cx="{cx}" cy="{cy}" r="{ry * 0.62:.1f}" fill="{GOLD}" stroke="{JADE}" stroke-width="2.5"/>
     <path d="M{cx - 4} {cy - 4} q3 -3 7 -2" stroke="{CREAM}" stroke-width="2" fill="none" stroke-linecap="round"/>
   </g>"""
 
 
 def svg_rice():
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-  <path d="M232 30 L150 96 M250 40 L160 100" stroke="{ORANGE}" stroke-width="5" stroke-linecap="round"/>
-  <path d="M48 118 C54 68 106 50 150 50 C196 50 246 68 252 118 Z" fill="{CREAM}" stroke="{BLUE}" stroke-width="4"/>
+  <path d="M232 30 L150 96 M250 40 L160 100" stroke="{JADE}" stroke-width="5" stroke-linecap="round"/>
+  <path d="M48 118 C54 68 106 50 150 50 C196 50 246 68 252 118 Z" fill="{CREAM}" stroke="{SAPPHIRE}" stroke-width="4"/>
   {RICE_GRAINS}
-  <circle cx="96" cy="84" r="5" fill="none" stroke="{BLUE}" stroke-width="2.5"/>
-  <circle cx="226" cy="92" r="5" fill="none" stroke="{BLUE}" stroke-width="2.5"/>
-  <circle cx="176" cy="64" r="4" fill="none" stroke="{BLUE}" stroke-width="2.5"/>
+  <circle cx="96" cy="84" r="5" fill="none" stroke="{SAPPHIRE}" stroke-width="2.5"/>
+  <circle cx="226" cy="92" r="5" fill="none" stroke="{SAPPHIRE}" stroke-width="2.5"/>
+  <circle cx="176" cy="64" r="4" fill="none" stroke="{SAPPHIRE}" stroke-width="2.5"/>
   {bowl_body()}
 </svg>"""
 
 
 def svg_cover_bowl():
     chicken = f"""
-  <path d="M92 104 C88 70 126 56 158 64 C150 80 136 98 120 112 Z" fill="{ORANGE}"/>
+  <path d="M92 104 C88 70 126 56 158 64 C150 80 136 98 120 112 Z" fill="{GOLD}" stroke="{JADE_DARK}" stroke-width="2.5"/>
   <path d="M104 98 C112 86 126 76 142 70 M112 106 C122 94 134 84 150 76 M98 88 C106 78 116 72 128 66" stroke="{CREAM}" stroke-width="2.5" fill="none" stroke-linecap="round"/>"""
     banana = "".join(
-        f'<circle cx="{x}" cy="{y}" r="11" fill="{YELLOW}" stroke="{ORANGE}" stroke-width="2.5"/>'
-        f'<path d="M{x - 3} {y - 2} l3 5 l3 -5" stroke="{ORANGE}" stroke-width="1.8" fill="none"/>'
+        f'<circle cx="{x}" cy="{y}" r="11" fill="{GOLD}" stroke="{JADE}" stroke-width="2.5"/>'
+        f'<path d="M{x - 3} {y - 2} l3 5 l3 -5" stroke="{JADE}" stroke-width="1.8" fill="none"/>'
         for x, y in [(232, 98), (246, 112), (218, 112)]
     )
     beans = "".join(
-        f'<ellipse cx="{x}" cy="{y}" rx="7" ry="4.5" fill="{BLUE}" transform="rotate({r} {x} {y})"/>'
+        f'<ellipse cx="{x}" cy="{y}" rx="7" ry="4.5" fill="{SAPPHIRE}" transform="rotate({r} {x} {y})"/>'
         for x, y, r in [(70, 110, 25), (82, 100, -10), (64, 96, 40), (78, 88, 15)]
     )
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-  <path d="M48 118 C54 68 106 50 150 50 C196 50 246 68 252 118 Z" fill="{CREAM}" stroke="{BLUE}" stroke-width="4"/>
+  <path d="M48 118 C54 68 106 50 150 50 C196 50 246 68 252 118 Z" fill="{CREAM}" stroke="{SAPPHIRE}" stroke-width="4"/>
   {chicken}
   {egg_half(178, 80)}
   {egg_half(204, 96, rot=15)}
   {banana}
   {beans}
-  <path d="M138 52 C132 30 150 18 146 4 M160 52 C166 34 152 24 160 10" stroke="{ORANGE}" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <circle cx="122" cy="110" r="5" fill="none" stroke="{BLUE}" stroke-width="2.5"/>
-  <circle cx="162" cy="112" r="5" fill="none" stroke="{BLUE}" stroke-width="2.5"/>
+  <path d="M138 52 C132 30 150 18 146 4 M160 52 C166 34 152 24 160 10" stroke="{JADE}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="122" cy="110" r="5" fill="none" stroke="{SAPPHIRE}" stroke-width="2.5"/>
+  <circle cx="162" cy="112" r="5" fill="none" stroke="{SAPPHIRE}" stroke-width="2.5"/>
   {bowl_body()}
 </svg>"""
 
 
 def svg_beans():
     beans = "".join(
-        f'<g transform="rotate({r} {x} {y})"><ellipse cx="{x}" cy="{y}" rx="9" ry="6" fill="{BLUE}"/>'
+        f'<g transform="rotate({r} {x} {y})"><ellipse cx="{x}" cy="{y}" rx="9" ry="6" fill="{SAPPHIRE}"/>'
         f'<path d="M{x - 4} {y - 2} q4 -2 8 0" stroke="{CREAM}" stroke-width="1.8" fill="none" stroke-linecap="round"/></g>'
         for x, y, r in [(36, 232, 20), (58, 240, -15), (250, 236, 30), (272, 228, -10), (22, 214, 45)]
     )
     floating = "".join(
-        f'<ellipse cx="{x}" cy="{y}" rx="8" ry="5" fill="{CREAM}" stroke="{BLUE}" stroke-width="2" transform="rotate({r} {x} {y})"/>'
+        f'<ellipse cx="{x}" cy="{y}" rx="8" ry="5" fill="{CREAM}" stroke="{SAPPHIRE}" stroke-width="2" transform="rotate({r} {x} {y})"/>'
         for x, y, r in [(100, 100, 15), (130, 106, -20), (165, 98, 10), (196, 106, 30), (118, 94, 40), (180, 92, -10), (215, 98, 0), (85, 106, -30)]
     )
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-  <path d="M120 70 c-12 -14 10 -22 0 -36 c-8 -12 8 -18 2 -28 M150 66 c-12 -14 10 -22 0 -36 c-8 -12 8 -18 2 -28 M180 70 c-12 -14 10 -22 0 -36 c-8 -12 8 -18 2 -28" stroke="{ORANGE}" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M42 128 C14 126 14 160 44 160" stroke="{BLUE}" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <path d="M258 128 C286 126 286 160 256 160" stroke="{BLUE}" stroke-width="9" fill="none" stroke-linecap="round"/>
-  <ellipse cx="150" cy="102" rx="104" ry="16" fill="{ORANGE}"/>
+  <path d="M120 70 c-12 -14 10 -22 0 -36 c-8 -12 8 -18 2 -28 M150 66 c-12 -14 10 -22 0 -36 c-8 -12 8 -18 2 -28 M180 70 c-12 -14 10 -22 0 -36 c-8 -12 8 -18 2 -28" stroke="{JADE}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M42 128 C14 126 14 160 44 160" stroke="{SAPPHIRE}" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M258 128 C286 126 286 160 256 160" stroke="{SAPPHIRE}" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <ellipse cx="150" cy="102" rx="104" ry="16" fill="{JADE_LIGHT}"/>
   {floating}
-  <path d="M48 106 L252 106 L244 206 C242 222 230 228 214 228 L86 228 C70 228 58 222 56 206 Z" fill="{BLUE}"/>
-  <rect x="38" y="98" width="224" height="16" rx="8" fill="{BLUE}"/>
+  <path d="M48 106 L252 106 L244 206 C242 222 230 228 214 228 L86 228 C70 228 58 222 56 206 Z" fill="{SAPPHIRE}"/>
+  <rect x="38" y="98" width="224" height="16" rx="8" fill="{SAPPHIRE}"/>
   <path d="M50 106 L250 106" stroke="{CREAM}" stroke-width="2.5" stroke-linecap="round"/>
   <path d="M70 146 q15 -12 30 0 t30 0 t30 0 t30 0 t30 0 t30 0" stroke="{CREAM}" stroke-width="3.5" fill="none" stroke-linecap="round"/>
   <path d="M74 178 q13 -10 26 0 t26 0 t26 0 t26 0 t26 0 t26 0" stroke="{CREAM}" stroke-width="3" fill="none" stroke-linecap="round"/>
   {"".join(f'<circle cx="{x}" cy="204" r="3.5" fill="{CREAM}"/>' for x in range(86, 220, 20))}
-  <path d="M236 70 L206 118" stroke="{ORANGE}" stroke-width="6" stroke-linecap="round"/>
-  <ellipse cx="244" cy="58" rx="16" ry="11" fill="{ORANGE}" transform="rotate(-30 244 58)"/>
+  <path d="M236 70 L206 118" stroke="{JADE}" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="244" cy="58" rx="16" ry="11" fill="{JADE}" transform="rotate(-30 244 58)"/>
   {beans}
 </svg>"""
 
@@ -118,40 +120,40 @@ def svg_chicken():
     def drum(tx, ty, s, rot):
         return f"""
   <g transform="translate({tx} {ty}) rotate({rot}) scale({s})">
-    <path d="M60 30 L118 -6" stroke="{BLUE}" stroke-width="18" stroke-linecap="round"/>
+    <path d="M60 30 L118 -6" stroke="{SAPPHIRE}" stroke-width="18" stroke-linecap="round"/>
     <path d="M60 30 L118 -6" stroke="{CREAM}" stroke-width="11" stroke-linecap="round"/>
-    <circle cx="122" cy="-14" r="10" fill="{CREAM}" stroke="{BLUE}" stroke-width="3.5"/>
-    <circle cx="130" cy="-2" r="10" fill="{CREAM}" stroke="{BLUE}" stroke-width="3.5"/>
+    <circle cx="122" cy="-14" r="10" fill="{CREAM}" stroke="{SAPPHIRE}" stroke-width="3.5"/>
+    <circle cx="130" cy="-2" r="10" fill="{CREAM}" stroke="{SAPPHIRE}" stroke-width="3.5"/>
     <path d="M124 -8 L114 -2" stroke="{CREAM}" stroke-width="10"/>
-    <path d="M-40 40 C-50 0 -10 -26 30 -10 C56 0 74 22 66 40 C58 62 26 74 -4 70 C-24 66 -36 56 -40 40 Z" fill="{ORANGE}"/>
+    <path d="M-40 40 C-50 0 -10 -26 30 -10 C56 0 74 22 66 40 C58 62 26 74 -4 70 C-24 66 -36 56 -40 40 Z" fill="{GOLD}" stroke="{JADE_DARK}" stroke-width="3"/>
     <path d="M-26 30 c10 -14 26 -20 44 -18 M-28 48 c14 -12 34 -16 56 -10 M-12 62 c12 -8 30 -10 46 -4 M-14 10 c8 -8 20 -12 34 -10" stroke="{CREAM}" stroke-width="3" fill="none" stroke-linecap="round"/>
   </g>"""
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-  <ellipse cx="150" cy="178" rx="138" ry="50" fill="{BLUE}"/>
+  <ellipse cx="150" cy="178" rx="138" ry="50" fill="{SAPPHIRE}"/>
   <ellipse cx="150" cy="174" rx="118" ry="38" fill="none" stroke="{CREAM}" stroke-width="3"/>
   <path d="M44 186 c8 -10 20 -10 26 0 M230 186 c8 -10 20 -10 26 0 M120 214 c8 -8 20 -8 26 0 M160 214 c8 -8 20 -8 26 0" stroke="{CREAM}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   {drum(110, 156, 0.95, -8)}
   {drum(150, 122, 0.8, 14)}
-  <path d="M236 150 A26 26 0 0 1 288 150 Z" fill="{YELLOW}" stroke="{ORANGE}" stroke-width="3"/>
-  <path d="M262 150 L248 132 M262 150 L262 126 M262 150 L276 132" stroke="{ORANGE}" stroke-width="2" stroke-linecap="round"/>
-  <path d="M40 120 C50 90 70 70 92 60" stroke="{BLUE}" stroke-width="3" fill="none" stroke-linecap="round"/>
-  {"".join(f'<ellipse cx="{x}" cy="{y}" rx="9" ry="4.5" fill="{BLUE}" transform="rotate({r} {x} {y})"/>' for x, y, r in [(50, 98, -60), (62, 82, 20), (70, 74, -40), (84, 64, 30), (46, 112, 10)])}
+  <path d="M236 150 A26 26 0 0 1 288 150 Z" fill="{GOLD}" stroke="{JADE}" stroke-width="3"/>
+  <path d="M262 150 L248 132 M262 150 L262 126 M262 150 L276 132" stroke="{JADE}" stroke-width="2" stroke-linecap="round"/>
+  <path d="M40 120 C50 90 70 70 92 60" stroke="{SAPPHIRE}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  {"".join(f'<ellipse cx="{x}" cy="{y}" rx="9" ry="4.5" fill="{SAPPHIRE}" transform="rotate({r} {x} {y})"/>' for x, y, r in [(50, 98, -60), (62, 82, 20), (70, 74, -40), (84, 64, 30), (46, 112, 10)])}
 </svg>"""
 
 
 def svg_egg():
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-  <path d="M206 112 L290 82" stroke="{BLUE}" stroke-width="18" stroke-linecap="round"/>
+  <path d="M206 112 L290 82" stroke="{SAPPHIRE}" stroke-width="18" stroke-linecap="round"/>
   <path d="M232 104 L280 86" stroke="{CREAM}" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="126" cy="132" r="96" fill="{BLUE}"/>
+  <circle cx="126" cy="132" r="96" fill="{SAPPHIRE}"/>
   <circle cx="126" cy="132" r="80" fill="none" stroke="{CREAM}" stroke-width="3"/>
-  <path d="M76 120 C64 90 104 66 132 78 C162 64 196 94 182 124 C200 154 168 186 134 176 C98 192 64 160 76 120 Z" fill="{CREAM}" stroke="{ORANGE}" stroke-width="3"/>
-  <circle cx="128" cy="126" r="24" fill="{YELLOW}" stroke="{ORANGE}" stroke-width="3"/>
+  <path d="M76 120 C64 90 104 66 132 78 C162 64 196 94 182 124 C200 154 168 186 134 176 C98 192 64 160 76 120 Z" fill="{CREAM}" stroke="{JADE}" stroke-width="3"/>
+  <circle cx="128" cy="126" r="24" fill="{GOLD}" stroke="{JADE}" stroke-width="3"/>
   <path d="M116 116 q6 -6 14 -4" stroke="{CREAM}" stroke-width="3" fill="none" stroke-linecap="round"/>
-  {"".join(f'<circle cx="{x}" cy="{y}" r="2.2" fill="{BLUE}"/>' for x, y in [(98, 150), (104, 158), (160, 150), (152, 98), (96, 104)])}
+  {"".join(f'<circle cx="{x}" cy="{y}" r="2.2" fill="{SAPPHIRE}"/>' for x, y in [(98, 150), (104, 158), (160, 150), (152, 98), (96, 104)])}
   <g transform="rotate(18 252 196)">
-    <ellipse cx="252" cy="196" rx="26" ry="34" fill="{CREAM}" stroke="{BLUE}" stroke-width="3.5"/>
-    <path d="M240 178 q6 -8 14 -8" stroke="{BLUE}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <ellipse cx="252" cy="196" rx="26" ry="34" fill="{CREAM}" stroke="{SAPPHIRE}" stroke-width="3.5"/>
+    <path d="M240 178 q6 -8 14 -8" stroke="{SAPPHIRE}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   </g>
   {egg_half(210, 232, 22, 15, 0)}
 </svg>"""
@@ -161,49 +163,49 @@ def svg_banana():
     def banana(tx, ty, rot, s=1.0):
         return f"""
   <g transform="translate({tx} {ty}) rotate({rot}) scale({s})">
-    <path d="M0 0 C10 70 70 120 170 112 C180 111 184 104 176 100 C92 100 40 62 24 -4 Z" fill="{YELLOW}" stroke="{BLUE}" stroke-width="3.5" stroke-linejoin="round"/>
-    <path d="M14 8 C26 60 70 94 150 104" stroke="{ORANGE}" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-    <path d="M0 0 L4 -18 L24 -20 L24 -4 Z" fill="{BLUE}"/>
-    <circle cx="178" cy="106" r="4" fill="{BLUE}"/>
+    <path d="M0 0 C10 70 70 120 170 112 C180 111 184 104 176 100 C92 100 40 62 24 -4 Z" fill="{GOLD}" stroke="{SAPPHIRE}" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M14 8 C26 60 70 94 150 104" stroke="{JADE}" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M0 0 L4 -18 L24 -20 L24 -4 Z" fill="{SAPPHIRE}"/>
+    <circle cx="178" cy="106" r="4" fill="{SAPPHIRE}"/>
   </g>"""
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-  <path d="M20 200 C40 120 120 60 230 40 C200 110 120 180 20 200 Z" fill="{BLUE}"/>
+  <path d="M20 200 C40 120 120 60 230 40 C200 110 120 180 20 200 Z" fill="{SAPPHIRE}"/>
   <path d="M24 196 C90 150 160 96 226 44 M70 168 l-10 -26 M110 140 l-8 -28 M150 110 l-6 -26 M90 154 l26 4 M132 124 l26 4 M172 92 l24 2" stroke="{CREAM}" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   {banana(60, 50, 4)}
   {banana(70, 74, -6, 0.95)}
   {banana(52, 96, -2, 0.9)}
-  {"".join(f'<circle cx="{x}" cy="{y}" r="14" fill="{CREAM}" stroke="{ORANGE}" stroke-width="3"/><circle cx="{x}" cy="{y}" r="5" fill="none" stroke="{BLUE}" stroke-width="2"/>' for x, y in [(220, 214), (252, 222), (238, 192)])}
+  {"".join(f'<circle cx="{x}" cy="{y}" r="14" fill="{CREAM}" stroke="{JADE}" stroke-width="3"/><circle cx="{x}" cy="{y}" r="5" fill="none" stroke="{SAPPHIRE}" stroke-width="2"/>' for x, y in [(220, 214), (252, 222), (238, 192)])}
 </svg>"""
 
 
 def svg_utensils():
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
   <g transform="rotate(-28 150 125)">
-    <ellipse cx="110" cy="60" rx="24" ry="36" fill="{BLUE}"/>
+    <ellipse cx="110" cy="60" rx="24" ry="36" fill="{SAPPHIRE}"/>
     <ellipse cx="110" cy="56" rx="14" ry="24" fill="none" stroke="{CREAM}" stroke-width="3"/>
-    <path d="M110 96 L110 226" stroke="{BLUE}" stroke-width="12" stroke-linecap="round"/>
+    <path d="M110 96 L110 226" stroke="{SAPPHIRE}" stroke-width="12" stroke-linecap="round"/>
     <path d="M110 150 L110 214" stroke="{CREAM}" stroke-width="2.5" stroke-linecap="round"/>
   </g>
   <g transform="rotate(26 150 125)">
-    <path d="M176 24 L176 76 M190 24 L190 76 M204 24 L204 76 M218 24 L218 76" stroke="{ORANGE}" stroke-width="7" stroke-linecap="round"/>
-    <path d="M170 70 C170 100 224 100 224 70" fill="{ORANGE}"/>
-    <path d="M197 96 L197 226" stroke="{ORANGE}" stroke-width="12" stroke-linecap="round"/>
+    <path d="M176 24 L176 76 M190 24 L190 76 M204 24 L204 76 M218 24 L218 76" stroke="{JADE}" stroke-width="7" stroke-linecap="round"/>
+    <path d="M170 70 C170 100 224 100 224 70" fill="{JADE}"/>
+    <path d="M197 96 L197 226" stroke="{JADE}" stroke-width="12" stroke-linecap="round"/>
   </g>
-  {"".join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{c}"/>' for x, y, r, c in [(40, 200, 6, YELLOW), (262, 210, 5, BLUE), (56, 60, 4, ORANGE), (250, 50, 6, YELLOW)])}
+  {"".join(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{c}"/>' for x, y, r, c in [(40, 200, 6, GOLD), (262, 210, 5, SAPPHIRE), (56, 60, 4, JADE), (250, 50, 6, GOLD)])}
 </svg>"""
 
 
 def svg_jar():
     return f"""<svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-  <rect x="88" y="30" width="124" height="28" rx="6" fill="{ORANGE}"/>
+  <rect x="88" y="30" width="124" height="28" rx="6" fill="{JADE}"/>
   <path d="M100 44 L200 44" stroke="{CREAM}" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="6 6"/>
-  <path d="M96 58 L204 58 C232 70 236 96 236 120 L236 214 C236 228 226 236 212 236 L88 236 C74 236 64 228 64 214 L64 120 C64 96 68 70 96 58 Z" fill="{BLUE}"/>
+  <path d="M96 58 L204 58 C232 70 236 96 236 120 L236 214 C236 228 226 236 212 236 L88 236 C74 236 64 228 64 214 L64 120 C64 96 68 70 96 58 Z" fill="{SAPPHIRE}"/>
   <rect x="92" y="120" width="116" height="70" rx="6" fill="{CREAM}"/>
-  <path d="M106 142 c10 -10 22 -10 30 0 c10 -10 22 -10 30 0 c10 -10 22 -10 30 0" stroke="{ORANGE}" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M106 168 L194 168" stroke="{BLUE}" stroke-width="3" stroke-linecap="round"/>
+  <path d="M106 142 c10 -10 22 -10 30 0 c10 -10 22 -10 30 0 c10 -10 22 -10 30 0" stroke="{JADE}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M106 168 L194 168" stroke="{SAPPHIRE}" stroke-width="3" stroke-linecap="round"/>
   <path d="M80 100 C82 86 88 76 98 70" stroke="{CREAM}" stroke-width="4" fill="none" stroke-linecap="round"/>
-  <path d="M30 220 C28 190 46 170 56 160 M22 232 C40 214 50 206 60 200" stroke="{ORANGE}" stroke-width="3" fill="none" stroke-linecap="round"/>
-  {"".join(f'<ellipse cx="{x}" cy="{y}" rx="10" ry="5" fill="{BLUE}" transform="rotate({r} {x} {y})"/>' for x, y, r in [(254, 226, -20), (270, 210, 30), (262, 236, 10)])}
+  <path d="M30 220 C28 190 46 170 56 160 M22 232 C40 214 50 206 60 200" stroke="{JADE}" stroke-width="3" fill="none" stroke-linecap="round"/>
+  {"".join(f'<ellipse cx="{x}" cy="{y}" rx="10" ry="5" fill="{SAPPHIRE}" transform="rotate({r} {x} {y})"/>' for x, y, r in [(254, 226, -20), (270, 210, 30), (262, 236, 10)])}
 </svg>"""
 
 
@@ -225,13 +227,13 @@ SWIRLS = {
 
 def swirls(*keys):
     paths = "".join(
-        f'<path d="{SWIRLS[k]}" fill="none" stroke="{ORANGE}" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>'
+        f'<path d="{SWIRLS[k]}" fill="none" stroke="{JADE}" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>'
         for k in keys
     )
     return f'<svg class="swirls" viewBox="0 0 210 297" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">{paths}</svg>'
 
 
-UNDERLINE = f'<svg class="uline" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2 8 C50 3 120 2 198 7" fill="none" stroke="{ORANGE}" stroke-width="1.6" stroke-linecap="round"/></svg>'
+UNDERLINE = f'<svg class="uline" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M2 8 C50 3 120 2 198 7" fill="none" stroke="{JADE}" stroke-width="1.6" stroke-linecap="round"/></svg>'
 
 # --------------------------------------------------------------- helpers
 
@@ -602,8 +604,8 @@ CSS = f"""
 @font-face {{ font-family: 'Sometype Mono'; src: url(fonts/sometype-mono-italic.woff2) format('woff2'); font-style: italic; }}
 @page {{ size: A4; margin: 0; }}
 * {{ box-sizing: border-box; }}
-html, body {{ margin: 0; background: #BFB5AA; }}
-body {{ font-family: 'Sometype Mono', monospace; color: {BLUE}; font-size: 10pt; line-height: 1.55;
+html, body {{ margin: 0; background: {JADE_DARK}; }}
+body {{ font-family: 'Sometype Mono', monospace; color: {JADE_DARK}; font-size: 10pt; line-height: 1.55;
   -webkit-print-color-adjust: exact; print-color-adjust: exact; }}
 .page {{ width: 210mm; height: 297mm; position: relative; overflow: hidden; background: {CREAM};
   margin: 0 auto 10mm; page-break-after: always; break-after: page; }}
@@ -612,44 +614,44 @@ body {{ font-family: 'Sometype Mono', monospace; color: {BLUE}; font-size: 10pt;
 .content {{ position: relative; padding: 24mm 24mm 22mm; height: 100%; }}
 footer {{ position: absolute; left: 24mm; right: 24mm; bottom: 10mm; display: flex; justify-content: flex-end; gap: 6mm;
   font-size: 7.5pt; letter-spacing: .18em; }}
-.kicker {{ font-size: 8pt; letter-spacing: .28em; text-transform: uppercase; color: {ORANGE}; margin: 0 0 1mm; }}
-h1 {{ font-family: 'Allison', cursive; font-weight: 400; font-size: 66pt; line-height: .82; margin: 0 0 6mm;
+.kicker {{ font-size: 8pt; letter-spacing: .28em; text-transform: uppercase; color: {JADE}; margin: 0 0 1mm; }}
+h1 {{ color: {SAPPHIRE}; font-family: 'Allison', cursive; font-weight: 400; font-size: 66pt; line-height: .82; margin: 0 0 6mm;
   transform: rotate(-3deg); transform-origin: left center; max-width: 150mm; }}
 h1.recipe-title {{ font-size: 58pt; }}
-h2 {{ font-family: 'Allison', cursive; font-weight: 400; font-size: 35pt; line-height: 1; margin: 4.5mm 0 3.5mm;
+h2 {{ color: {SAPPHIRE}; font-family: 'Allison', cursive; font-weight: 400; font-size: 35pt; line-height: 1; margin: 4.5mm 0 3.5mm;
   position: relative; display: inline-block; padding-right: 6mm; }}
 h2 .uline {{ position: absolute; left: -2mm; right: 0; bottom: -1.5mm; width: calc(100% + 2mm); height: 3mm; }}
 p {{ margin: 0 0 3.2mm; max-width: 155mm; }}
 b {{ font-weight: 700; }}
 .lead {{ font-size: 12pt; line-height: 1.5; }}
 .meta {{ font-size: 8pt; letter-spacing: .16em; margin: 0 0 1mm; }}
-.quote {{ font-family: 'Allison', cursive; color: {ORANGE}; font-size: 33pt; line-height: 1.05; margin: 4mm 0 4mm 6mm;
+.quote {{ font-family: 'Allison', cursive; color: {JADE}; font-size: 33pt; line-height: 1.05; margin: 4mm 0 4mm 6mm;
   transform: rotate(-2deg); transform-origin: left center; }}
 ol.dots {{ list-style: none; counter-reset: d; padding: 0; margin: 0 0 2mm; }}
 ol.dots li {{ counter-increment: d; position: relative; padding-left: 11mm; margin: 0 0 2.6mm; min-height: 7mm;
   display: flex; align-items: center; }}
 ol.dots li::before {{ content: counter(d); position: absolute; left: 0; top: 50%; transform: translateY(-50%);
-  width: 7mm; height: 7mm; border-radius: 50%; background: {ORANGE}; color: {CREAM};
+  width: 7mm; height: 7mm; border-radius: 50%; background: {JADE}; color: #fff; font-weight: 700;
   font-size: 7.5pt; display: flex; align-items: center; justify-content: center; }}
 ul.bul {{ list-style: none; padding: 0; margin: 0 0 2mm; }}
 ul.bul li {{ position: relative; padding-left: 7mm; margin: 0 0 2.6mm; }}
 ul.bul li::before {{ content: ""; position: absolute; left: 1mm; top: 2.1mm; width: 2.4mm; height: 2.4mm;
-  border-radius: 50%; background: {ORANGE}; }}
+  border-radius: 50%; background: {JADE}; }}
 ol.steps {{ list-style: none; counter-reset: s; padding: 0; margin: 0 0 2mm; }}
 ol.steps li {{ counter-increment: s; display: grid; grid-template-columns: 12mm 42mm 1fr; align-items: start;
   margin: 0 0 3.6mm; }}
-ol.steps li::before {{ content: counter(s); width: 7mm; height: 7mm; border-radius: 50%; background: {ORANGE};
-  color: {CREAM}; font-size: 7pt; display: flex; align-items: center; justify-content: center; margin-top: -1mm; }}
+ol.steps li::before {{ content: counter(s); width: 7mm; height: 7mm; border-radius: 50%; background: {JADE};
+  color: #fff; font-weight: 700; font-size: 7pt; display: flex; align-items: center; justify-content: center; margin-top: -1mm; }}
 ol.steps .lbl {{ font-size: 8.6pt; letter-spacing: .06em; padding-right: 3mm; }}
 table {{ width: 100%; border-collapse: collapse; margin: 2mm 0 3mm; font-size: 9.4pt; }}
 td:first-child {{ white-space: nowrap; padding-right: 4mm; }}
 th {{ text-align: left; font-weight: 400; font-size: 7.5pt; letter-spacing: .2em; text-transform: uppercase;
-  color: {ORANGE}; border-bottom: 1.4px solid {BLUE}; padding: 2mm 2mm 1.5mm 0; }}
-td {{ border-bottom: 1px dashed rgba(34,56,184,.35); padding: 2.6mm 2mm 2.6mm 0; vertical-align: top; }}
+  color: {JADE}; border-bottom: 1.4px solid {JADE_DARK}; padding: 2mm 2mm 1.5mm 0; }}
+td {{ border-bottom: 1px dashed rgba(0,85,58,.35); padding: 2.6mm 2mm 2.6mm 0; vertical-align: top; }}
 ul.check {{ list-style: none; padding: 0; margin: 3mm 0; }}
 ul.check li {{ position: relative; padding-left: 11mm; margin: 0 0 4.5mm; font-size: 10.5pt; }}
 ul.check li::before {{ content: ""; position: absolute; left: 0; top: -.4mm; width: 6mm; height: 6mm;
-  border: 1.6px solid {ORANGE}; border-radius: 50%; }}
+  border: 1.6px solid {JADE}; border-radius: 50%; }}
 /* ilustrações */
 .illu-corner {{ position: absolute; right: 16mm; top: 22mm; width: 62mm; }}
 .illu-corner.small {{ width: 40mm; top: 18mm; right: 18mm; }}
@@ -659,8 +661,8 @@ ul.check li::before {{ content: ""; position: absolute; left: 0; top: -.4mm; wid
 .opener-illu {{ width: 120mm; margin: 2mm 0 4mm 14mm; }}
 .recipe-top {{ display: grid; grid-template-columns: 1fr 64mm; gap: 6mm; align-items: center; }}
 .recipe-illu svg {{ width: 100%; }}
-.tip {{ border-top: 1.4px solid {ORANGE}; margin-top: 3mm; padding-top: 2mm; }}
-.tip-title {{ font-family: 'Allison', cursive; color: {ORANGE}; font-size: 32pt; line-height: 1; margin: 0 0 1mm; }}
+.tip {{ border-top: 1.4px solid {JADE}; margin-top: 3mm; padding-top: 2mm; }}
+.tip-title {{ font-family: 'Allison', cursive; color: {JADE}; font-size: 32pt; line-height: 1; margin: 0 0 1mm; }}
 .tip-var {{ font-size: 9.2pt; }}
 .dense table {{ font-size: 8.8pt; }}
 .dense td {{ padding: 2mm 2mm 2mm 0; }}
@@ -674,7 +676,7 @@ ul.check li::before {{ content: ""; position: absolute; left: 0; top: -.4mm; wid
 .cover-illu svg {{ width: 100%; }}
 .cover-promise {{ font-size: 13pt; line-height: 1.45; margin-top: 10mm; }}
 .cover-sub {{ font-size: 10pt; max-width: 120mm; }}
-.cover-author {{ position: absolute; bottom: 22mm; left: 24mm; font-size: 8pt; letter-spacing: .3em; color: {ORANGE}; }}
+.cover-author {{ position: absolute; bottom: 22mm; left: 24mm; font-size: 8pt; letter-spacing: .3em; color: {JADE}; }}
 .back .content {{ display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }}
 .back-illu {{ width: 110mm; margin-bottom: 8mm; }}
 .back .cover-promise {{ max-width: none; }}
@@ -682,7 +684,7 @@ ul.check li::before {{ content: ""; position: absolute; left: 0; top: -.4mm; wid
 .toc-list li {{ margin-bottom: 4.6mm; }}
 .toc-list li {{ display: flex; gap: 2mm; }}
 .toc-name {{ flex: none; max-width: 120mm; }}
-.toc-dots {{ flex: 1; border-bottom: 1.4px dotted {BLUE}; transform: translateY(-1mm); align-self: end; }}
+.toc-dots {{ flex: 1; border-bottom: 1.4px dotted {JADE_DARK}; transform: translateY(-1mm); align-self: end; }}
 .toc-num {{ flex: none; }}
 """
 
