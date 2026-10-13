@@ -2,7 +2,7 @@
 
 Ebook **COZINHA MAMEDE: 5 Ingredientes. 15 Transformações.** no estilo YouTube: ritmo rápido, frases curtas, conteúdo escaneável.
 
-Design inspirado em ficha de receita ilustrada: paleta Jade Ascent: azul safira, verde jade (claro e escuro) e dourado sobre fundo off-white, títulos em caligrafia (Allison), texto em fonte mono (Sometype Mono), círculos numerados, traçados soltos e ilustrações em SVG.
+Design inspirado em ficha de receita ilustrada: fundo creme com verde floresta, cenoura, tomate, sol e kiwi, títulos condensados em caixa-alta (Barlow Condensed), texto em Poppins, círculos numerados, traçados soltos e ilustrações em SVG.
 
 - `ebook-cozinha-mamede.pdf`: ebook diagramado, pronto para enviar (A4, 34 páginas)
 - `ebook-cozinha-mamede.html`: mesma versão em HTML (abre no navegador)
