@@ -2,5 +2,5 @@
 
 Duas versões do mesmo ebook de receitas, para comparação.
 
-- `versao-a/` — primeira versão
-- `versao-b/` — segunda versão
+- `VERSAO YOUTUBE/`
+- `VERSAO LUQ/`
