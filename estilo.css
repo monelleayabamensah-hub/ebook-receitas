@@ -54,12 +54,12 @@ svg { display: block; width: 100%; height: 100%; }
   display: block; font: 400 27pt/1.1 var(--serif); font-style: normal;
   text-transform: uppercase; letter-spacing: 0.03em; color: var(--verde);
 }
-.titulo::after { content: ""; display: block; width: 13mm; height: 0.9pt; background: var(--tinta); margin-top: 4.5mm; }
+.titulo-traco { display: block; width: 13mm; height: 0.9pt; background: var(--tinta); margin-top: 4.5mm; }
 .titulo.menor em { font-size: 21pt; }
 .titulo.abertura em, .titulo.grande em { color: var(--terra); }
 .titulo.grande span { font-size: 26pt; }
 .titulo.grande em { font-size: 36pt; }
-.titulo.grande::after { display: none; }
+.titulo.grande .titulo-traco { display: none; }
 
 .titulo-misto { font: 400 26pt/1.15 var(--serif); margin: 4mm 0 7mm; color: var(--tinta); }
 .titulo-misto em { font-style: normal; color: var(--terra); }
@@ -183,6 +183,7 @@ svg { display: block; width: 100%; height: 100%; }
 .abertura .indice li { border-bottom: 0.6pt solid var(--linha); padding: 3.2mm 0; }
 .abertura .indice li a small { display: block; font: 600 6.4pt var(--sans); letter-spacing: 0.18em; text-transform: uppercase; color: var(--terra); margin-bottom: 0.6mm; }
 .abertura .indice li a { font-size: 10pt; max-width: 120mm; }
+.abertura .indice li a span { display: block; }
 
 /* ─────────────────────────────── antes da panela */
 .antes { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }

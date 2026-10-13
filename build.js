@@ -54,7 +54,7 @@ const prato = (icone, foto, cls = "") =>
     ? `<div class="prato com-foto ${cls}" style="background-image:url('${foto}')"></div>`
     : `<div class="prato ${cls}"><div class="prato-borda"></div><div class="prato-icone">${I[icone]}</div></div>`;
 
-const titulo = (l1, l2, cls = "") => `<h2 class="titulo ${cls}"><span>${l1}</span><em>${l2}</em></h2>`;
+const titulo = (l1, l2, cls = "") => `<h2 class="titulo ${cls}"><span>${l1}</span><em>${l2}</em><i class="titulo-traco"></i></h2>`;
 const rotulo = (t) => `<div class="rotulo">${t}</div>`;
 const lista = (itens, cls = "pontos") => `<ul class="${cls}">${itens.map((i) => `<li>${i}</li>`).join("")}</ul>`;
 
@@ -198,7 +198,7 @@ c.capitulos.forEach((cap, ci) => {
     <div class="corrido">${cap.ingrediente.map((p) => `<p>${p}</p>`).join("")}</div>
     ${rotulo("As 3 transformações")}
     <ol class="indice">${cap.receitas
-      .map((r, i) => `<li><span class="pill terra">${pad(i + 1)}</span><a href="#p${pagsReceitas[i]}"><small>${r.rotulo}</small>${r.nome}</a><i></i><b>${pad(pagsReceitas[i])}</b></li>`)
+      .map((r, i) => `<li><span class="pill terra">${pad(i + 1)}</span><a href="#p${pagsReceitas[i]}"><small>${r.rotulo}</small><span>${r.nome}</span></a><i></i><b>${pad(pagsReceitas[i])}</b></li>`)
       .join("")}</ol>`;
   folhas[pagAbertura - 1].cls = "abertura";
 });
