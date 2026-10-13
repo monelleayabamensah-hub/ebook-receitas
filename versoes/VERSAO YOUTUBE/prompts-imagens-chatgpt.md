@@ -113,7 +113,7 @@ Estas imagens acompanham as receitas que estão hoje no ebook (arroz, feijão, f
 
 ### Aberturas de capítulo (uma por ingrediente)
 
-**Imagem 02: Arroz.** Tigela verde floresta com padrão de escamas vazadas, cheia de arroz branco em montinho, grãos desenhados com pequenos traços azuis, um par de hashis cor de tomate apoiado na borda.
+**Imagem 02: Arroz.** Tigela verde floresta com padrão de escamas vazadas, cheia de arroz branco em montinho, grãos desenhados com pequenos traços verde floresta, um par de hashis cor de tomate apoiado na borda.
 
 **Imagem 03: Feijão.** Panela verde floresta com alças, padrão de ondas e pontinhos vazados em creme, caldo cor de tomate aparecendo na boca da panela com grãos de feijão, uma concha cor de cenoura dentro e vapor cor de cenoura subindo; alguns grãos verde floresta soltos no chão.
 
