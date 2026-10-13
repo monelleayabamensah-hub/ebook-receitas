@@ -4,7 +4,7 @@ Ebook **COZINHA MAMEDE: 5 ingredientes. 15 transformações.** com a estrutura c
 
 Capítulos: Abóbora Cabotiá, Banana-da-Terra, Sobrecoxa de Frango, Mandioca e Cenoura.
 
-Design: fundo creme com verde-oliva e terracota, títulos em Playfair Display, texto em Montserrat, assinatura em Allura (as três existem no Canva).
+Design: fundo creme com verde-oliva e terracota, títulos em DM Serif Display, destaques em Instrument Serif itálico e texto em Montserrat (as três existem no Canva).
 
 - `Cozinha-Mamede.pdf`: ebook diagramado (A4, 41 páginas)
 - `Cozinha-Mamede-Canva.pptx`: versão editável para o Canva (Criar design → Importar arquivo)

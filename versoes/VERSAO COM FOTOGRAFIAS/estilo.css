@@ -8,9 +8,10 @@
   --tinta: #2F2A25;
   --suave: #6B645B;
   --linha: #DDD2C0;
-  --serif: "Playfair Display", Georgia, serif;
+  --serif: "DM Serif Display", Georgia, serif;
   --sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-  --script: "Allura", cursive;
+  --script: "Instrument Serif", Georgia, serif;
+  --italico: "Instrument Serif", Georgia, serif;
 }
 
 @page { size: A4; margin: 0; }
@@ -47,18 +48,18 @@ svg { display: block; width: 100%; height: 100%; }
 /* ─────────────────────────────── tipografia */
 .titulo { font-weight: 400; margin-bottom: 6mm; }
 .titulo span {
-  display: block; font: 400 14pt/1.15 var(--serif);
+  display: block; font: 600 8pt/1.4 var(--sans); letter-spacing: 0.22em; margin-bottom: 1mm;
   text-transform: uppercase; letter-spacing: 0.05em; color: var(--tinta);
 }
 .titulo em {
-  display: block; font: 400 27pt/1.1 var(--serif); font-style: normal;
-  text-transform: uppercase; letter-spacing: 0.03em; color: var(--verde);
+  display: block; font: 400 34pt/1.02 var(--serif); font-style: normal; text-transform: none;
+  letter-spacing: -0.005em; color: var(--verde);
 }
 .titulo-traco { display: block; width: 13mm; height: 0.9pt; background: var(--tinta); margin-top: 4.5mm; }
-.titulo.menor em { font-size: 21pt; }
+.titulo.menor em { font-size: 27pt; }
 .titulo.abertura em, .titulo.grande em { color: var(--terra); }
-.titulo.grande span { font-size: 26pt; }
-.titulo.grande em { font-size: 36pt; }
+.titulo.grande span { font: 400 30pt/1 var(--serif); letter-spacing: 0; text-transform: none; }
+.titulo.grande em { font-size: 44pt; }
 .titulo.grande .titulo-traco { display: none; }
 
 .titulo-misto { font: 400 26pt/1.15 var(--serif); margin: 4mm 0 7mm; color: var(--tinta); }
@@ -72,7 +73,7 @@ svg { display: block; width: 100%; height: 100%; }
 .lead { font: 400 10.2pt/1.6 var(--sans); color: var(--suave); max-width: 125mm; margin-bottom: 6mm; }
 .corrido p { font-size: 9.9pt; line-height: 1.72; }
 .espaco { height: 9mm; }
-.script { font: 400 30pt/1.05 var(--script); color: var(--verde); margin-top: 7mm; }
+.script { font: italic 400 28pt/1.05 var(--script); color: var(--verde); margin-top: 7mm; }
 .coracao-pq { width: 7mm; height: 7mm; color: var(--terra); margin-top: 4mm; }
 .coracao-pq.cheio { color: var(--verde); }
 
@@ -109,9 +110,9 @@ svg { display: block; width: 100%; height: 100%; }
 .marca b { display: block; font: 700 7.5pt var(--sans); letter-spacing: 0.14em; }
 .marca small { display: block; font: 400 6pt var(--sans); letter-spacing: 0.12em; text-transform: uppercase; color: var(--suave); }
 .capa-titulo { margin-top: 34mm; }
-.capa-o { display: block; font: 400 17pt var(--serif); letter-spacing: 0.08em; color: var(--tinta); }
+.capa-o { display: block; font: 600 9pt var(--sans); letter-spacing: 0.24em; color: var(--tinta); }
 .capa h1 { font-weight: 400; margin: 1mm 0 2mm; }
-.capa h1 span, .capa h1 em { display: block; font: 400 52pt/1.02 var(--serif); font-style: normal; }
+.capa h1 span, .capa h1 em { display: block; font: 400 62pt/.95 var(--serif); font-style: normal; letter-spacing: -0.01em; }
 .capa h1 span { color: var(--verde); }
 .capa h1 em { color: var(--terra); }
 .capa .traco { margin: 8mm 0 6mm; width: 16mm; }
@@ -176,8 +177,8 @@ svg { display: block; width: 100%; height: 100%; }
 /* ─────────────────────────────── abertura de capítulo */
 .ab-topo { position: relative; min-height: 88mm; }
 .ab-txt { width: 98mm; padding-top: 4mm; }
-.titulo.abertura em { font-size: 30pt; }
-.apelido { font: italic 400 12pt var(--serif); color: var(--suave); margin: -2mm 0 5mm; }
+.titulo.abertura em { font-size: 40pt; }
+.apelido { font: italic 400 14pt var(--italico); color: var(--suave); margin: -2mm 0 5mm; }
 .ab-prato { position: absolute; width: 92mm; height: 92mm; top: -6mm; right: -34mm; }
 .abertura .corrido { margin-bottom: 6mm; }
 .abertura .indice li { border-bottom: 0.6pt solid var(--linha); padding: 3.2mm 0; }
@@ -199,8 +200,8 @@ ul.setas li::before { content: "→"; position: absolute; left: 0; color: var(--
 /* ─────────────────────────────── receita */
 .rec-cab { position: relative; min-height: 62mm; }
 .rec-cab-txt { width: 112mm; }
-.rec-titulo { font: 400 24pt/1.18 var(--serif); color: var(--verde); margin: 1mm 0 5mm; }
-.rec-sub { font: italic 400 11pt/1.4 var(--serif); color: var(--terra); margin: -3mm 0 5mm; }
+.rec-titulo { font: 400 25pt/1.1 var(--serif); color: var(--verde); margin: 1mm 0 5mm; }
+.rec-sub { font: italic 400 13pt/1.3 var(--italico); color: var(--terra); margin: -3mm 0 5mm; }
 .rec-meta { display: flex; gap: 8mm; }
 .rec-meta > div { display: grid; grid-template-columns: 8mm auto; column-gap: 2.5mm; align-items: center; }
 .circ { grid-row: span 2; width: 8mm; height: 8mm; border: 0.8pt solid var(--tinta); border-radius: 50%; padding: 1.5mm; display: block; }
@@ -225,10 +226,10 @@ ul.setas li::before { content: "→"; position: absolute; left: 0; color: var(--
   background: var(--bege); border-radius: 3mm; padding: 4.5mm 5mm;
 }
 .toque b { display: block; font: 700 7pt var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--verde); margin-bottom: 1mm; }
-.toque p { margin: 0; font: italic 400 10pt/1.5 var(--serif); }
+.toque p { margin: 0; font: italic 400 11.5pt/1.4 var(--italico); }
 
 /* ─────────────────────────────── pulo do chef e substituições */
-.subtitulo { font: 400 15pt/1.3 var(--serif); color: var(--terra); margin: -1mm 0 5mm; }
+.subtitulo { font: italic 400 17pt/1.25 var(--italico); color: var(--terra); margin: -1mm 0 5mm; }
 .pulo { display: grid; grid-template-columns: 1fr 1.25fr; gap: 5mm; }
 .pulo-erro, .pulo-tec { border-radius: 3mm; padding: 5mm; }
 .pulo-erro { background: #FBF8F3; border: 0.6pt solid var(--linha); }
