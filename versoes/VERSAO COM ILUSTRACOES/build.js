@@ -53,6 +53,17 @@ const ilu = (nome, cls, arq = nome) => {
   const img = imagem(arq);
   return `<div class="ilu ${cls}">${img ? `<img src="${img}" alt="">` : ILU[nome]()}</div>`;
 };
+// Faixa de informações da receita: preparo, cozimento e rendimento
+const ICONE_FICHA = {
+  preparo: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20h38c0 11-8 19-19 19S5 31 5 20z"/><path d="M16 39l-1 4h18l-1-4"/><path d="M30 18l10-12"/></svg>`,
+  cozimento: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="26" r="17"/><path d="M24 15v11l8 5"/><path d="M19 5h10M24 5v4"/></svg>`,
+  rende: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5v12a5 5 0 0 0 10 0V5M19 5v38"/><path d="M36 5c-5 3-6 10-6 16h6v22"/></svg>`,
+};
+const fichaTecnica = (r) => `<div class="ficha">${[
+  ["preparo", "Preparo", r.tempoPreparo],
+  ["cozimento", "Cozimento", r.tempoCozimento],
+  ["rende", "Rende", r.rende],
+].map(([k, rot, val]) => `<div class="ficha-item"><span class="ficha-ic">${ICONE_FICHA[k]}</span><div><p class="ficha-rot">${rot}:</p><p class="ficha-val">${val}</p></div></div>`).join("")}</div>`;
 const segredo = (t) => `<div class="segredo"><p class="seg-tit">Segredo de chef</p><p>${t}</p></div>`;
 
 // ─────────────────────────────────────────── folhas
@@ -129,8 +140,9 @@ c.capitulos.forEach((cap, ci) => {
       `${ilu(icone, "canto pequeno", `r${n}-${i + 1}`)}
        <p class="kicker">Transformação ${pad(i + 1)} · ${NOMES_CURTOS[ci]}</p>
        <h1 class="receita-titulo com-arte">${r.nome}</h1>
-       <p class="meta">${r.rotulo} · ${r.rende} · ${r.tempo}</p>
+       <p class="meta">${r.rotulo}</p>
        ${r.subtitulo ? `<p class="subtitulo">(${r.subtitulo})</p>` : ""}
+       ${fichaTecnica(r)}
        ${h2("Ingredientes")}
        <div class="duas-colunas">${ingr}</div>
        ${h2("Modo de preparo")}

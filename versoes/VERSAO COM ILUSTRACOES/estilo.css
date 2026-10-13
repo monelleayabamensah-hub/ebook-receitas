@@ -134,3 +134,20 @@ ol.pulos p { font-size: 9.2pt; }
 .capa-titulo.pequeno span { display: inline; }
 .fim p { max-width: 140mm; }
 .capa-autor.fim { position: static; margin-top: 6mm; }
+
+/* faixa de informações da receita (preparo · cozimento · rende) */
+.ficha {
+  display: grid; grid-template-columns: repeat(3, 1fr); margin: 3mm 0 1mm;
+  border-top: 1.4px solid var(--floresta); border-bottom: 1.4px solid var(--floresta); padding: 3mm 0;
+}
+.ficha-item { display: flex; align-items: center; gap: 3mm; padding: 0 4mm; min-width: 0; }
+.ficha-item + .ficha-item { border-left: 1.4px dotted var(--floresta); }
+.ficha-item:first-child { padding-left: 0; }
+.ficha-ic { flex: none; width: 10mm; height: 10mm; color: var(--floresta); }
+.ficha-rot { font: 800 11.5pt/1.1 var(--titulo); text-transform: uppercase; letter-spacing: .04em; color: var(--tomate); margin: 0; }
+.ficha-val { font-size: 8.2pt; line-height: 1.35; margin: 0; }
+/* receitas: espaçamento um pouco mais justo para caber a faixa de informações */
+.receita h1.receita-titulo { font-size: 29pt; margin-bottom: 3mm; }
+.receita h2 { margin: 3.4mm 0 2.4mm; }
+.receita ol.pontos li { margin-bottom: 1.5mm; }
+.receita .ficha { padding: 2.4mm 0; margin-top: 2mm; }

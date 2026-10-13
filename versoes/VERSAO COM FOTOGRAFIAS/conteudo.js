@@ -66,7 +66,7 @@ module.exports = {
           rotulo: "O Clássico Afetivo",
           nome: "Nhoque de abóbora tostado na manteiga de garrafa e sálvia",
           subtitulo: "conforto refinado",
-          rende: "4 porções", tempo: "1h15",
+          rende: "4 porções", tempo: "1h15", tempoPreparo: "35 min", tempoCozimento: "40 min",
           ingredientes: [
             { grupo: "Massa", itens: [
               "800 g de abóbora cabotiá com casca (cerca de 600 g de polpa)",
@@ -96,7 +96,7 @@ module.exports = {
           rotulo: "O Inusitado",
           nome: "Hambúrguer ou bolinho cremoso assado de abóbora com especiarias e queijo coalho",
           subtitulo: "o lado salgado que ninguém espera",
-          rende: "12 bolinhos ou 6 hambúrgueres", tempo: "1h (mais 30 min de geladeira)",
+          rende: "12 bolinhos ou 6 hambúrgueres", tempo: "1h (mais 30 min de geladeira)", tempoPreparo: "30 min + 30 min de geladeira", tempoCozimento: "30 min",
           ingredientes: [
             { itens: [
               "500 g de abóbora cabotiá assada e amassada (veja o passo 1 do nhoque)",
@@ -124,7 +124,7 @@ module.exports = {
           rotulo: "O Lado Doce",
           nome: "Crepúsculo: doce de abóbora cremoso de colher com coco e raspas de laranja",
           subtitulo: "uma sobremesa de memória afetiva",
-          rende: "cerca de 1 kg", tempo: "1h10",
+          rende: "cerca de 1 kg", tempo: "1h10", tempoPreparo: "10 min", tempoCozimento: "1h",
           ingredientes: [
             { itens: [
               "1 kg de polpa de abóbora cabotiá em cubos",
@@ -213,7 +213,7 @@ module.exports = {
           rotulo: "A Rápida de Frigideira",
           nome: "Moqueca expressa de frigideira com banana, leite de coco e pimenta",
           subtitulo: "sem peixe, mas cheia de sabor",
-          rende: "3 porções", tempo: "30 min",
+          rende: "3 porções", tempo: "30 min", tempoPreparo: "10 min", tempoCozimento: "20 min",
           ingredientes: [
             { itens: [
               "3 bananas-da-terra maduras e firmes, em rodelas diagonais de 2 cm",
@@ -242,7 +242,7 @@ module.exports = {
           rotulo: "A Textura Surpreendente",
           nome: "Purê aveludado de banana grelhada com noz-moscada",
           subtitulo: "para acompanhar carnes ou legumes assados",
-          rende: "4 porções como acompanhamento", tempo: "25 min",
+          rende: "4 porções como acompanhamento", tempo: "25 min", tempoPreparo: "10 min", tempoCozimento: "15 min",
           ingredientes: [
             { itens: [
               "3 bananas-da-terra maduras",
@@ -265,7 +265,7 @@ module.exports = {
           rotulo: "A Sobremesa de Chef",
           nome: "Bananas flambadas no rum ou na cachaça com crosta de açúcar mascavo e canela",
           subtitulo: "a sobremesa de restaurante feita em casa",
-          rende: "4 porções", tempo: "15 min",
+          rende: "4 porções", tempo: "15 min", tempoPreparo: "5 min", tempoCozimento: "10 min",
           ingredientes: [
             { itens: [
               "2 bananas-da-terra ou 4 bananas-prata firmes",
@@ -353,7 +353,7 @@ module.exports = {
           rotulo: "A Técnica da Frigideira",
           nome: "Sobrecoxa desossada com pele ultracrocante ao molho rústico de limão e alho",
           subtitulo: "a pele mais crocante que você já fez",
-          rende: "2 a 4 porções", tempo: "35 min",
+          rende: "2 a 4 porções", tempo: "35 min", tempoPreparo: "10 min", tempoCozimento: "25 min",
           ingredientes: [
             { grupo: "Frango", itens: [
               "4 sobrecoxas desossadas, com pele",
@@ -384,7 +384,7 @@ module.exports = {
           rotulo: "O Cozimento Lento",
           nome: "Frango desfiado suculento ao molho de tomate caseiro e ervas",
           subtitulo: "para massas, tortas e sanduíches",
-          rende: "6 porções", tempo: "1h20 (ou 40 min na pressão)",
+          rende: "6 porções", tempo: "1h20 (ou 40 min na pressão)", tempoPreparo: "15 min", tempoCozimento: "1h05 (25 min na pressão)",
           ingredientes: [
             { itens: [
               "6 sobrecoxas com osso e pele (cerca de 1 kg)",
@@ -415,7 +415,7 @@ module.exports = {
           rotulo: "O Assado Tecnológico",
           nome: "Sobrecoxa marinada no iogurte com especiarias, assada até dourar",
           subtitulo: "maciez extrema, no forno ou na airfryer",
-          rende: "4 a 6 porções", tempo: "50 min (mais 2 h de marinada)",
+          rende: "4 a 6 porções", tempo: "50 min (mais 2 h de marinada)", tempoPreparo: "10 min + 2 h de marinada", tempoCozimento: "40 min",
           ingredientes: [
             { grupo: "Marinada", itens: [
               "170 g de iogurte natural integral (1 pote)",
@@ -508,7 +508,7 @@ module.exports = {
           rotulo: "A Crocância Perfeita",
           nome: "Rösti de mandioca recheado na frigideira",
           subtitulo: "crosta dourada por fora, cremoso por dentro",
-          rende: "1 rösti grande (2 a 4 porções)", tempo: "45 min",
+          rende: "1 rösti grande (2 a 4 porções)", tempo: "45 min", tempoPreparo: "15 min", tempoCozimento: "30 min",
           ingredientes: [
             { grupo: "Massa", itens: [
               "500 g de mandioca crua descascada",
@@ -535,7 +535,7 @@ module.exports = {
           rotulo: "A Culinária Acolhedora",
           nome: "Caldo aveludado de mandioca com gengibre e bacon (ou cogumelos)",
           subtitulo: "abraço em forma de prato",
-          rende: "4 a 6 porções", tempo: "45 min (ou 25 min na pressão)",
+          rende: "4 a 6 porções", tempo: "45 min (ou 25 min na pressão)", tempoPreparo: "15 min", tempoCozimento: "30 min (12 min na pressão)",
           ingredientes: [
             { itens: [
               "800 g de mandioca descascada, em pedaços",
@@ -562,7 +562,7 @@ module.exports = {
           rotulo: "A Surpresa",
           nome: "Biscoito de polvilho e mandioca de assadeira",
           subtitulo: "rápido para o lanche da tarde",
-          rende: "cerca de 30 biscoitos", tempo: "50 min",
+          rende: "cerca de 30 biscoitos", tempo: "50 min", tempoPreparo: "20 min", tempoCozimento: "30 min",
           ingredientes: [
             { itens: [
               "300 g de mandioca cozida, sem os fios, amassada ainda quente",
@@ -654,7 +654,7 @@ module.exports = {
           rotulo: "O Assado Intenso",
           nome: "Cenouras assadas inteiras, caramelizadas no mel ou melaço com azeite e tomilho",
           subtitulo: "doçura natural levada ao máximo",
-          rende: "4 porções", tempo: "45 min",
+          rende: "4 porções", tempo: "45 min", tempoPreparo: "5 min", tempoCozimento: "40 min",
           ingredientes: [
             { itens: [
               "8 cenouras médias (cerca de 600 g)",
@@ -680,7 +680,7 @@ module.exports = {
           rotulo: "O Prato Principal",
           nome: "Hambúrguer rústico ou bolinho de cenoura com aveia e especiarias",
           subtitulo: "saboroso e nutritivo",
-          rende: "6 hambúrgueres", tempo: "45 min (mais 20 min de geladeira)",
+          rende: "6 hambúrgueres", tempo: "45 min (mais 20 min de geladeira)", tempoPreparo: "25 min + 20 min de geladeira", tempoCozimento: "20 min",
           ingredientes: [
             { itens: [
               "3 cenouras médias raladas (cerca de 300 g)",
@@ -709,7 +709,7 @@ module.exports = {
           rotulo: "A Sobremesa de Respeito",
           nome: "Bolo de cenoura da vovó com técnica de chef e calda de chocolate espelhada",
           subtitulo: "massa fofíssima que não sola",
-          rende: "1 assadeira de 20 × 30 cm", tempo: "1h10",
+          rende: "1 assadeira de 20 × 30 cm", tempo: "1h10", tempoPreparo: "20 min", tempoCozimento: "50 min",
           ingredientes: [
             { grupo: "Massa", itens: [
               "3 cenouras médias (cerca de 300 g), em rodelas",
