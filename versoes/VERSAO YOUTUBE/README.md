@@ -10,5 +10,7 @@ Design inspirado em ficha de receita ilustrada: fundo creme com verde floresta, 
 - `build.py`: gera o HTML (conteúdo, ilustrações e estilos ficam aqui)
 - `render.js`: gera o PDF a partir do HTML e avisa se alguma página estourou
 - `fonts/`: fontes usadas (licença SIL Open Font License)
+- `canva/`: versão editável para o Canva (`.pptx`), com as fontes em TTF e instruções
+- `canva-export.js` e `canva_pptx.py`: geram a versão do Canva a partir do HTML
 
 Para regerar: `python3 build.py && node render.js`
