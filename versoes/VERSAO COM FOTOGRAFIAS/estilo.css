@@ -253,3 +253,9 @@ table.subs { width: 100%; border-collapse: collapse; }
 .pulos .dica p { font-size: 8.9pt; }
 
 .abertura .indice li a span em { font-style: italic; color: var(--suave); font-weight: 400; }
+
+/* textura granulada por cima de toda a página */
+.folha::after {
+  content: ""; position: absolute; inset: 0; z-index: 50; pointer-events: none;
+  background: url(textura-granulada.png) no-repeat; background-size: 100% 100%;
+}

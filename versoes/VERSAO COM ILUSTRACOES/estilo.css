@@ -168,3 +168,9 @@ ol.pulos p { font-size: 9.2pt; }
 .ar-aro { position: absolute; inset: 6mm; border-radius: 50%; border: 1.4px solid var(--floresta); }
 .ar-ilu { position: absolute; left: 12mm; top: 30mm; width: 120mm; }
 .ar-ilu img { border-radius: 50%; }
+
+/* textura granulada por cima de toda a página */
+.folha::after {
+  content: ""; position: absolute; inset: 0; z-index: 50; pointer-events: none;
+  background: url(textura-granulada.png) no-repeat; background-size: 100% 100%;
+}

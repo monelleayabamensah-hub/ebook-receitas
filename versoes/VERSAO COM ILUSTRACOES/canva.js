@@ -187,17 +187,22 @@ function extrair() {
       it.png = cache.get(chave);
     }
   }
+  // Fundo da página com a textura granulada (uma imagem só, no layout de todos os slides)
+  const fundoPag = await browser.newPage({ deviceScaleFactor: 1.5, viewport: { width: 800, height: 1130 } });
+  const grao = fs.readFileSync(path.join(ROOT, "textura-granulada.png")).toString("base64");
+  await fundoPag.setContent(`<html><body style="margin:0"><div id="f" style="width:210mm;height:297mm;background:#F3E8CC url(data:image/png;base64,${grao}) no-repeat;background-size:100% 100%"></div></body></html>`);
+  const fundo = (await fundoPag.locator("#f").screenshot({ type: "jpeg", quality: 82 })).toString("base64");
   await browser.close();
 
   const pres = new PptxGenJS();
   pres.defineLayout({ name: "A4", width: 210 / 25.4, height: 297 / 25.4 });
   pres.layout = "A4";
+  pres.defineSlideMaster({ title: "PAGINA", background: { data: "image/jpeg;base64," + fundo } });
   pres.title = "Cozinha Mamede";
   pres.author = "Chef Allan Mamede";
 
   folhas.forEach((itens) => {
-    const s = pres.addSlide();
-    s.background = { color: "F3E8CC" };
+    const s = pres.addSlide({ masterName: "PAGINA" });
     for (const it of itens) {
       if (it.tipo === "forma") {
         const arq = it.foto && (it.foto.startsWith("file:") ? require("url").fileURLToPath(it.foto) : path.join(ROOT, it.foto));
