@@ -108,7 +108,37 @@ function extrair() {
       return runs.filter((r) => r.br || r.t);
     };
 
+    // fotos com o texto contornando (float): o parágrafo ao lado vira duas caixas,
+    // uma estreita ao lado da foto e outra larga abaixo dela
+    const flutuantes = [...folha.querySelectorAll(".foto-flutua")].map((f) => f.getBoundingClientRect());
+    const dividirAoRedor = (el, cs) => {
+      if (el.childNodes.length !== 1 || el.firstChild.nodeType !== 3) return false;
+      const er = el.getBoundingClientRect();
+      const f = flutuantes.find((q) => q.top < er.bottom && q.bottom > er.top && q.left > er.left);
+      if (!f) return false;
+      const no = el.firstChild, t = no.textContent;
+      const r = document.createRange();
+      const topo = (i) => { r.setStart(no, i); r.setEnd(no, i + 1); return r.getBoundingClientRect().top; };
+      // primeiro caractere numa linha que começa abaixo da foto
+      let k = -1;
+      for (let i = 0; i < t.length; i++) { if (t[i] !== " " && topo(i) >= f.bottom - 2) { k = i; break; } }
+      const tam = parseFloat(cs.fontSize), lh = parseFloat(cs.lineHeight) || tam * 1.25;
+      const run = (txt) => ({ t: txt, fonte: cs.fontFamily.split(",")[0].replace(/["']/g, "").trim(), tam, cor: rgb(cs.color)?.hex || "000000",
+        negrito: parseInt(cs.fontWeight) >= 600, peso: parseInt(cs.fontWeight), italico: cs.fontStyle === "italic", esp: 0 });
+      const parteA = k === -1 ? t : t.slice(0, k), parteB = k === -1 ? "" : t.slice(k);
+      const yB = k === -1 ? er.bottom : topo(k);
+      const larguraA = f.left - er.left - 2;
+      const linhasDe = (y0, y1) => { const rg = document.createRange(); rg.selectNodeContents(el);
+        return new Set([...rg.getClientRects()].filter((q) => q.width > 0 && q.top >= y0 - 1 && q.bottom <= y1 + 1).map((q) => Math.round(q.top))).size; };
+      itens.push({ tipo: "texto", x: er.left - base.left, y: er.top - base.top, w: larguraA, h: yB - er.top + 2,
+        runs: [run(parteA.trim())], alinh: "left", lh, linhas: linhasDe(er.top, yB), tam });
+      if (parteB.trim()) itens.push({ tipo: "texto", x: er.left - base.left, y: yB - base.top, w: er.width, h: er.bottom - yB + 2,
+        runs: [run(parteB.trim())], alinh: "left", lh, linhas: linhasDe(yB, er.bottom), tam });
+      return true;
+    };
+
     const texto = (el, cs) => {
+      if (flutuantes.length && dividirAoRedor(el, cs)) return;
       const range = document.createRange();
       range.selectNodeContents(el);
       const rects = [...range.getClientRects()].filter((q) => q.width > 0 && q.height > 0);

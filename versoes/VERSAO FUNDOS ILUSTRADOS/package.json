@@ -1,0 +1,23 @@
+{
+  "name": "ebook-receitas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monelleayabamensah-hub/ebook-receitas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monelleayabamensah-hub/ebook-receitas/issues"
+  },
+  "homepage": "https://github.com/monelleayabamensah-hub/ebook-receitas#readme",
+  "dependencies": {
+    "pptxgenjs": "^3.12.0"
+  }
+}
