@@ -10,6 +10,8 @@ O ebook rediagramado em páginas duplas assimétricas, como na referência:
 
 **Cores das colunas:** cacau (abertura e fechamento), abóbora, banana caramelizada, vinho (frango), oliva (mandioca), rosa-cenoura e verde-petróleo (bônus).
 
+**Capa:** a arte `capa-design.jpg` (azulejos com abóbora, banana, frango, mandioca e cenoura, e o título COZINHA MAMEDE na vertical), ocupando a página inteira. Para trocar, substitua o arquivo, de preferência exportado do Canva em PNG ou JPG no tamanho A4 ou maior, e rode `python3 build.py && node pdf.js`.
+
 **Estrutura (81 páginas):** capa sozinha à direita e, depois, uma página dupla para cada assunto:
 
 | Página dupla | Esquerda | Direita |

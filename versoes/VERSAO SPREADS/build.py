@@ -132,7 +132,10 @@ dd { margin: 1mm 0 0; line-height: 1.45; }
 .sumario li.sub { grid-template-columns: 7mm 1fr auto; opacity: .85; font-size: 8.5pt; }
 .sumario .n, .sumario .pg { color: var(--ouro); font-weight: 700; }
 
-/* capa e contracapa */
+/* capa: arte pronta, sangrando a página toda */
+.capa-arte { display: block; background: #F3DEB0 url(capa-design.jpg) center / cover no-repeat; }
+
+/* contracapa */
 .capa h1 { font-size: 46pt; line-height: .98; font-weight: 300; }
 .capa .coluna { display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 34mm; }
 """
@@ -185,6 +188,15 @@ class Pagina:
                 f'<div class="coluna">{coluna}</div>'
                 f'<div class="imagem">{apoio}<div class="foto{" media" if self.media else ""}" style="{bg}" role="img" aria-label="{self.foto}"></div></div>'
                 f"{num}</section>")
+
+
+class Capa:
+    """Capa: a arte pronta (capa-design.jpg) ocupando a página inteira."""
+    chave = "capa"
+
+    def html(self, n, nums):
+        return ('<section class="pagina dir capa-arte" id="p1" role="img" '
+                'aria-label="Cozinha Mamede: ebook de receitas por Chef Allan Mamede"></section>')
 
 
 def capitulo(c, n):
@@ -247,10 +259,7 @@ def capitulo(c, n):
 def paginas():
     A, B = CORES["abertura"], CORES["bonus"]
     P = []
-    P.append(Pagina("capa", A,
-                    '<p class="kicker">EBOOK DE RECEITAS</p><h1>Cozinha<br>Mamede</h1>'
-                    '<p class="lead">CINCO INGREDIENTES.<br>QUINZE TRANSFORMAÇÕES.</p><p class="assinatura">por CHEF ALLAN MAMEDE</p>',
-                    "capa", "", cls="capa"))
+    P.append(Capa())
     P.append(Pagina("cinco", A,
                     '<h1 class="medio">CINCO INGREDIENTES</h1><div class="tags"><span>ABÓBORA CABOTIÁ</span><span>CENOURA</span>'
                     '<span>MANDIOCA</span><span>SOBRECOXA DE FRANGO</span><span>BANANA-DA-TERRA</span></div>'
