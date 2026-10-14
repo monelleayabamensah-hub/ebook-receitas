@@ -55,7 +55,7 @@ h2 + h3 { margin-top: 8px; }
 ul, ol { margin: 0 0 12px; padding: 0; list-style: none; }
 ul.marcadores li { position: relative; padding-left: 18px; margin-bottom: 6px; }
 ul.marcadores li::before { content: ""; position: absolute; left: 2px; top: .62em; width: 7px; height: 7px; border-radius: 50%; background: var(--cenoura); }
-ol.passos li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; margin-bottom: 4px; }
+ol.passos li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; margin-bottom: 3px; }
 .n { font: 700 1.2em/1.25 var(--titulo); color: var(--tomate); text-align: left; }
 
 /* capa */
@@ -85,7 +85,7 @@ td:first-child { width: 36%; font: 600 1.0625em/1.4 var(--titulo); color: var(--
 .colunas .grupo { break-inside: avoid; }
 .colunas h3:first-child { margin-top: 0; }
 .colunas ul.marcadores li { margin-bottom: 2px; break-inside: avoid; }
-.segredo { background: var(--sol); border-radius: 10px; padding: 12px 16px 0; margin-top: 16px; }
+.segredo { background: var(--sol); border-radius: 10px; padding: 12px 16px 6px; margin-top: 8px; }
 .segredo h3 { margin: 0 0 8px; color: var(--tomate); }
 
 /* listas rotuladas (fundamentos, transformações, pulos) */
@@ -93,7 +93,7 @@ td:first-child { width: 36%; font: 600 1.0625em/1.4 var(--titulo); color: var(--
 .rotulados h3 { margin: 0 0 8px; }
 .rotulados .n { font-size: 1.5em; line-height: 1; }
 .rotulados p { margin-bottom: 12px; }
-.rotulados .pgr { font: 600 1em var(--titulo); color: var(--tomate); margin-left: 8px; letter-spacing: 0; }
+.rotulados .pgr { font: 600 1em var(--titulo); color: var(--tomate); letter-spacing: 0; }
 """
 
 
@@ -180,7 +180,7 @@ def transformacoes(c, manuscrita=False):
     cls = ' class="manuscrita"' if manuscrita else ""
     itens = ""
     for k, (rot, desc, pg) in enumerate(c["transf"], 1):
-        pgr = f'<span class="pgr">{pg}</span>' if pg else ""
+        pgr = f"&nbsp;&nbsp;<span class=\"pgr\">{pg}</span>" if pg else ""
         itens += f'<li><span class="n">{k}</span><div><h3>{e(rot)}{pgr}</h3><p{cls}>{e(desc)}</p></div></li>'
     return '<h2>3 TRANSFORMAÇÕES</h2><ol class="rotulados">' + itens + "</ol>"
 
@@ -207,7 +207,7 @@ def capitulo(c):
         out.append(pagina(
             f'<p class="kicker">TRANSFORMAÇÃO 0{k} · {c["tag"]}</p><h1>{e(r["titulo"])}</h1>'
             f'<p class="rotulo">{e(r["rotulo"])} <span>{e(r["nota"])}</span></p>'
-            f'<div class="meta"><p><b>PREPARO:</b>{e(r["preparo"])}</p><p><b>COZIMENTO:</b>{e(r["cozimento"])}</p><p><b>RENDE:</b>{e(r["rende"])}</p></div>'
+            f'<div class="meta"><p><b>PREPARO:</b><span>{e(r["preparo"])}</span></p><p><b>COZIMENTO:</b><span>{e(r["cozimento"])}</span></p><p><b>RENDE:</b><span>{e(r["rende"])}</span></p></div>'
             f'<h2>INGREDIENTES</h2><div class="colunas">{grupos}</div>'
             f'<h2>MODO DE PREPARO</h2>{ol(r["passos"])}'
             f'<div class="segredo"><h3>SEGREDO DE CHEF</h3><p>{e(r["segredo"])}</p></div>', r["pagina"]))
