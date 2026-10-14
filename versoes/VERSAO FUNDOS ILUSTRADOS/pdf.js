@@ -19,6 +19,9 @@ const path = require('path');
       limite = r.bottom - parseFloat(getComputedStyle(area).paddingBottom);
       fundo = Math.max(...[...area.children].map(c => c.getBoundingClientRect().bottom));
     }
+    // foto redonda no pé da página: o texto precisa terminar 4 px antes dela
+    const fotoPe = p.querySelector('.foto-rodape');
+    if (fotoPe && !area.classList.contains('cartao')) limite = Math.min(limite, fotoPe.getBoundingClientRect().top - 4);
     return fundo > limite ? `página ${i + 1}: +${Math.round(fundo - limite)}px` : null;
   }).filter(Boolean));
   console.log(estouros.length ? 'ESTOURO\n' + estouros.join('\n') : 'Nenhuma página estourou');
